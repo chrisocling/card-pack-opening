@@ -5,7 +5,17 @@
   "packSubtitle": "LITTLE WONDERS",
   "series": "SERIES 001",
   "packColor": "blue",
+  "packColors": [
+    {"name": "blue", "label": "蓝色卡包", "color": "#233feb"},
+    {"name": "pink", "label": "粉色卡包", "color": "#ed488f"}
+  ],
   "speed": 1,
+  "sound": true,
+  "mode": "random",
+  "packSize": 5,
+  "rates": {"common": 60, "rare": 27, "epic": 10, "legendary": 3},
+  "guarantee": "rare",
+  "pity": {"rarity": "legendary", "packs": 20},
   "cards": [
     {"name":"Blip", "tagline":"Small friend. Big feelings.", "rarity":"common", "art":"orb", "color":"#ff987b"},
     {"name":"Ringo", "tagline":"In a world of its own.", "rarity":"rare", "art":"planet", "color":"#6372f1"},
