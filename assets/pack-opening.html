@@ -5,8 +5,8 @@
     #holo-pack-opening [hidden]{display:none!important}
     #holo-pack-opening button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
     #holo-pack-opening button:focus-visible{outline:2px solid #5761b5;outline-offset:6px}
-    #holo-pack-opening .holo-stage{position:relative;width:100%;-webkit-user-select:none;user-select:none;height:max(520px,calc(var(--rows,1)*250px + 190px));overflow:hidden;background:radial-gradient(ellipse at 48% 40%,#fbfaf3 0%,#f0f0e6 58%,#e5e6dc 100%)}
-    #holo-pack-opening .stage-grain{position:absolute;inset:0;pointer-events:none;opacity:.16;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%236b6c55' filter='url(%23n)' opacity='.22' d='M0 0h160v160H0z'/%3E%3C/svg%3E")}
+    #holo-pack-opening .holo-stage{position:relative;width:100%;-webkit-user-select:none;user-select:none;height:max(520px,calc(var(--rows,1)*250px + 190px));overflow:hidden;background:radial-gradient(ellipse at 48% 40%,#ffffff 0%,#fafaf6 55%,#efefe9 100%)}
+    #holo-pack-opening .stage-grain{position:absolute;inset:0;pointer-events:none;opacity:.09;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%236b6c55' filter='url(%23n)' opacity='.22' d='M0 0h160v160H0z'/%3E%3C/svg%3E")}
     #holo-pack-opening .ambient{position:absolute;inset:-15%;pointer-events:none;background:conic-gradient(from 34deg at 32% 40%,transparent 0deg,rgba(255,255,255,.21) 1deg,transparent 20deg 100deg,rgba(255,255,255,.2) 102deg,transparent 125deg);opacity:.6}
     #holo-pack-opening .holo-header{position:absolute;top:25px;left:30px;right:30px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;z-index:9}
     #holo-pack-opening .wordmark{font-size:25px;font-weight:700;letter-spacing:-1.3px;line-height:1}
@@ -74,11 +74,10 @@
     #holo-pack-opening .card-slot{width:calc((100% - 48px)/5);max-width:153px;flex:0 1 calc((100% - 48px)/5);aspect-ratio:0.68;position:relative;opacity:0;transform-style:preserve-3d}
     #holo-pack-opening .card-button{position:relative;width:100%;height:100%;display:block;border:0;padding:0;background:transparent;text-align:left;transform:rotate(var(--rest,0deg));transition:transform .3s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d;isolation:isolate;outline-offset:5px}
     #holo-pack-opening .card-button:hover,#holo-pack-opening .card-button:focus-visible,#holo-pack-opening .card-button.is-selected{transform:translateY(-18px) rotate(0deg) scale(1.07);z-index:6}
-    #holo-pack-opening .card-surface{position:absolute;inset:0;overflow:hidden;border-radius:5px;background:linear-gradient(145deg,#ffffff91,transparent 65%),var(--tone);color:#28362c;box-shadow:0 4px 5px #393e3525,0 15px 20px -12px #303a345c,inset 0 0 0 1px #ffffffaa;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .18s ease-out,box-shadow .4s;backface-visibility:hidden}
-    #holo-pack-opening .rarity-rare .card-surface{background:radial-gradient(ellipse at 20% 10%,color-mix(in srgb,var(--tone) 78%,#fff),transparent 47%),linear-gradient(120deg,color-mix(in srgb,var(--tone) 28%,#052a3c),color-mix(in srgb,var(--tone) 62%,#1d1060) 48%,color-mix(in srgb,var(--tone) 30%,#15123c) 72%,color-mix(in srgb,var(--tone) 28%,#0c3d3d));color:#f5f5e6}
-    #holo-pack-opening .rarity-epic .card-surface{background:radial-gradient(ellipse at 70% 10%,color-mix(in srgb,var(--tone) 82%,#fff),transparent 47%),linear-gradient(120deg,color-mix(in srgb,var(--tone) 26%,#1d2e56),color-mix(in srgb,var(--tone) 44%,#1d0b3e) 50%,color-mix(in srgb,var(--tone) 24%,#122234) 76%,color-mix(in srgb,var(--tone) 26%,#1c4b4e));color:#f5f5e6}
-    #holo-pack-opening .rarity-legendary .card-surface{background:repeating-conic-gradient(from -20deg at 50% 33%,color-mix(in srgb,var(--tone) 72%,#fff23a) 0deg 11deg,color-mix(in srgb,var(--tone) 42%,#ff6f9c) 11deg 23deg);color:#493322}
-    #holo-pack-opening .rarity-legendary .card-surface:before{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--tone) 38%,#fff2d2) 65%)}
+    #holo-pack-opening .card-surface{--edge:color-mix(in srgb,var(--tone) 30%,#b4b4b4);--frame:linear-gradient(145deg,#ffffff 0%,#f6f6f6 45%,#d6d6d6 100%);position:absolute;inset:0;overflow:hidden;border:4px solid transparent;border-radius:11px;background:radial-gradient(ellipse 62% 36% at 28% 9%,#ffffffc4,transparent 70%) padding-box,radial-gradient(circle,#ffffff59 1.3px,transparent 1.9px) 0 0/11px 11px padding-box,linear-gradient(165deg,color-mix(in srgb,var(--tone) 42%,#fff) 0%,var(--tone) 55%,color-mix(in srgb,var(--tone) 84%,#000) 100%) padding-box,var(--frame) border-box;color:#2b2a35;box-shadow:0 1px 0 var(--edge),0 2px 0 var(--edge),0 3px 0 var(--edge),0 4px 0 var(--edge),0 5px 0 var(--edge),0 6px 0 color-mix(in srgb,var(--edge) 72%,#000),0 22px 22px -10px #2a2f2a5c,inset 0 2px 1px #ffffffd9,inset 0 -3px 2px #00000017,var(--glow-shadow,0 0 0 transparent);transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .18s ease-out,box-shadow .4s;backface-visibility:hidden}
+    #holo-pack-opening .rarity-rare .card-surface{--edge:#8ea9da;--frame:linear-gradient(135deg,#f2f9ff,#9cc8ff 30%,#ffffff 50%,#8fb2ff 72%,#e6f1ff);background:radial-gradient(ellipse 62% 36% at 28% 9%,#ffffffc4,transparent 70%) padding-box,repeating-linear-gradient(135deg,#ffffff33 0 7px,transparent 7px 15px) padding-box,linear-gradient(165deg,color-mix(in srgb,var(--tone) 42%,#fff) 0%,var(--tone) 55%,color-mix(in srgb,var(--tone) 84%,#000) 100%) padding-box,var(--frame) border-box}
+    #holo-pack-opening .rarity-epic .card-surface{--edge:#a580d8;--frame:linear-gradient(135deg,#ffe6ff,#d38bff 28%,#fff0ff 50%,#9d6bff 74%,#ffd9fb);background:radial-gradient(ellipse 62% 36% at 28% 9%,#ffffffc4,transparent 70%) padding-box,radial-gradient(circle,#ffffffb0 1px,transparent 1.7px) 0 0/8px 8px padding-box,conic-gradient(from 0deg at 50% 36%,#fff0,#ffffff38 6%,#fff0 14% 25%,#ffffff38 31%,#fff0 39% 50%,#ffffff38 56%,#fff0 64% 75%,#ffffff38 81%,#fff0 89%) padding-box,linear-gradient(165deg,color-mix(in srgb,var(--tone) 42%,#fff) 0%,var(--tone) 55%,color-mix(in srgb,var(--tone) 84%,#000) 100%) padding-box,var(--frame) border-box}
+    #holo-pack-opening .rarity-legendary .card-surface{--edge:#d49b17;--frame:linear-gradient(135deg,#fffbe0,#ffd23f 25%,#fff4b8 48%,#f0a800 72%,#fff0a8);background:radial-gradient(ellipse 62% 36% at 28% 9%,#ffffffc4,transparent 70%) padding-box,radial-gradient(circle,#ffffffc0 1px,transparent 1.7px) 0 0/9px 9px padding-box,repeating-conic-gradient(from -20deg at 50% 36%,color-mix(in srgb,var(--tone) 55%,#fff7a8) 0deg 11deg,color-mix(in srgb,var(--tone) 50%,#ffa2c2) 11deg 23deg) padding-box,var(--frame) border-box}
     #holo-pack-opening .card-halo{position:absolute;inset:-26% -34%;pointer-events:none;opacity:0;transition:opacity .6s;transform:translateZ(-2px)}
     #holo-pack-opening .rarity-epic .card-halo{border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--tone) 60%,#fff) 0%,color-mix(in srgb,var(--tone) 48%,transparent) 45%,transparent 76%);filter:blur(5px)}
     #holo-pack-opening .rarity-legendary .card-halo{background:repeating-conic-gradient(from 0deg,#ffe27a80 0deg 7deg,transparent 7deg 20deg);-webkit-mask:radial-gradient(closest-side,#000 22%,transparent 80%);mask:radial-gradient(closest-side,#000 22%,transparent 80%)}
@@ -86,20 +85,41 @@
     #holo-pack-opening .landed .card-halo{opacity:1}
     #holo-pack-opening .landed.rarity-epic .card-halo{animation:holo-pulse 2.6s ease-in-out infinite}
     #holo-pack-opening .landed.rarity-legendary .card-halo{animation:holo-spin 10s linear infinite}
-    #holo-pack-opening .landed.rarity-epic .card-surface{box-shadow:0 0 0 1px #f3e2ff,0 0 20px color-mix(in srgb,var(--tone) 75%,transparent),0 15px 20px -12px #303a345c}
-    #holo-pack-opening .landed.rarity-legendary .card-surface{box-shadow:0 0 0 1.5px #fff6d6,0 0 26px #ffd45ab0,0 15px 20px -12px #303a345c;animation:holo-pop .6s cubic-bezier(.2,.8,.3,1)}
-    #holo-pack-opening .card-grid{position:absolute;inset:0;opacity:.12;background:linear-gradient(#fff5 1px,transparent 1px),linear-gradient(90deg,#fff5 1px,transparent 1px);background-size:15px 15px;mask-image:linear-gradient(#000,transparent 85%)}
-    #holo-pack-opening .holo-overlay{position:absolute;inset:-70%;pointer-events:none;opacity:.26;mix-blend-mode:screen;background:linear-gradient(112deg,transparent 25%,#b1f2d8 33%,#e6c1ff 38%,#f7a2ae 43%,#ffed9c 48%,#aef6fa 52%,transparent 61%);transform:translateX(var(--shine,0%));transition:transform .2s}
-    #holo-pack-opening .card-button:hover .holo-overlay,#holo-pack-opening .card-button.is-selected .holo-overlay,#holo-pack-opening .landed.rarity-legendary .holo-overlay{opacity:.55}
-    #holo-pack-opening .card-number{position:absolute;top:10px;left:10px;font-size:6px;letter-spacing:1.3px;opacity:.65;z-index:1}
-    #holo-pack-opening .card-art{position:absolute;left:3%;right:3%;top:9%;height:61%;display:grid;place-items:center;filter:drop-shadow(0 10px 5px #23392725)}
+    #holo-pack-opening .landed.rarity-epic .card-surface{--glow-shadow:0 0 22px color-mix(in srgb,var(--tone) 70%,#fff)}
+    #holo-pack-opening .landed.rarity-legendary .card-surface{--glow-shadow:0 0 28px #ffd45ad0;animation:holo-pop .6s cubic-bezier(.2,.8,.3,1)}
+    #holo-pack-opening .holo-overlay{position:absolute;inset:-70%;pointer-events:none;opacity:.34;mix-blend-mode:screen;background:linear-gradient(112deg,transparent 25%,#b1f2d8 33%,#e6c1ff 38%,#f7a2ae 43%,#ffed9c 48%,#aef6fa 52%,transparent 61%);transform:translateX(var(--shine,0%));transition:transform .2s}
+    #holo-pack-opening .card-button:hover .holo-overlay,#holo-pack-opening .card-button.is-selected .holo-overlay,#holo-pack-opening .landed.rarity-legendary .holo-overlay{opacity:.72}
+    #holo-pack-opening .card-number{position:absolute;top:6px;left:6px;padding:2px 6px;border-radius:999px;background:#ffffffc9;color:#4b4a58;font-size:6px;letter-spacing:1.1px;z-index:2;box-shadow:0 1px 0 #0000000f}
+    #holo-pack-opening .card-art{position:absolute;left:4%;right:4%;top:9%;height:59%;display:grid;place-items:center;z-index:1;transform:translate(var(--ax,0px),var(--ay,0px));transition:transform .15s ease-out;filter:drop-shadow(1.6px 0 0 #fff) drop-shadow(-1.6px 0 0 #fff) drop-shadow(0 1.6px 0 #fff) drop-shadow(0 -1.6px 0 #fff) drop-shadow(0 9px 6px #2339273d)}
     #holo-pack-opening .card-art svg{display:block;width:100%;height:100%;overflow:visible}
     #holo-pack-opening .card-art img{width:100%;height:100%;object-fit:contain;border-radius:3px}
-    #holo-pack-opening .card-copy{position:absolute;left:10px;right:8px;top:71%;z-index:1}
+    #holo-pack-opening .card-copy{position:absolute;left:6px;right:6px;top:69%;padding:5px 7px 6px;border-radius:7px;background:#ffffffec;color:#2b2a35;box-shadow:0 2px 0 #00000012,inset 0 -1px 0 #0000000d;z-index:2}
     #holo-pack-opening .card-name{font-size:13px;font-weight:700;letter-spacing:-.35px;overflow-wrap:anywhere;line-height:1.05}
     #holo-pack-opening .card-tagline{margin-top:4px;font-size:6px;line-height:1.35;opacity:.7;overflow-wrap:anywhere}
-    #holo-pack-opening .card-bottom{position:absolute;bottom:9px;left:10px;right:9px;display:flex;justify-content:space-between;align-items:center;font-size:5px;letter-spacing:.7px;opacity:.7;gap:3px}
+    #holo-pack-opening .card-bottom{position:absolute;bottom:5px;left:9px;right:9px;display:flex;justify-content:space-between;align-items:center;font-size:5px;letter-spacing:.7px;opacity:.85;color:#34333f;text-shadow:0 1px 0 #ffffffa6;z-index:2;gap:3px}
     #holo-pack-opening .card-symbol{font-size:9px;line-height:1}
+    #holo-pack-opening .card-glint{position:absolute;inset:-20% -70%;pointer-events:none;z-index:3;background:linear-gradient(105deg,transparent 44%,#ffffffa8 49%,#fff8 51%,transparent 56%);transform:translateX(-80%);mix-blend-mode:screen}
+    #holo-pack-opening .landed .card-glint{animation:holo-glint 4.4s ease-in-out infinite;animation-delay:var(--glint-delay,0s)}
+    #holo-pack-opening .card-twinkle{position:absolute;z-index:3;width:9px;height:9px;pointer-events:none;opacity:0;background:radial-gradient(circle,#fff 0 18%,transparent 22%),conic-gradient(from 45deg,transparent 0 20%,#fff 24% 26%,transparent 30% 45%,#fff 49% 51%,transparent 55% 70%,#fff 74% 76%,transparent 80% 95%,#fff 99%);filter:drop-shadow(0 0 2px #fff)}
+    #holo-pack-opening .landed .card-twinkle{animation:holo-twinkle 2.2s ease-in-out infinite;animation-delay:var(--twinkle-delay,0s)}
+    #holo-pack-opening .card-art .fx,#holo-pack-opening .card-art .mouth{display:none}
+    #holo-pack-opening [data-face="normal"] .fx-normal,#holo-pack-opening [data-face="blink"] .fx-blink,#holo-pack-opening [data-face="wink"] .fx-wink,#holo-pack-opening [data-face="heart"] .fx-heart,#holo-pack-opening [data-face="star"] .fx-star,#holo-pack-opening [data-face="happy"] .fx-happy,#holo-pack-opening [data-face="wow"] .fx-wow{display:inline}
+    #holo-pack-opening [data-face="normal"] .m-smile,#holo-pack-opening [data-face="blink"] .m-smile,#holo-pack-opening [data-face="wink"] .m-grin,#holo-pack-opening [data-face="heart"] .m-grin,#holo-pack-opening [data-face="happy"] .m-grin,#holo-pack-opening [data-face="star"] .m-open,#holo-pack-opening [data-face="wow"] .m-open{display:inline}
+    #holo-pack-opening [data-face="heart"] .blush{opacity:.95}
+    #holo-pack-opening .card-art .face{transform-box:fill-box;transform-origin:center}
+    #holo-pack-opening .card-art .face.is-popping{animation:holo-face-pop .42s cubic-bezier(.2,.9,.3,1.4)}
+    #holo-pack-opening .card-art .look{transform:translate(var(--lx,0px),var(--ly,0px));transition:transform .12s ease-out}
+    #holo-pack-opening .card-art img.is-popping{animation:holo-face-pop .42s cubic-bezier(.2,.9,.3,1.4)}
+    #holo-pack-opening .pack-face .pf-strain,#holo-pack-opening .pack-face .pf-happy,#holo-pack-opening .pack-face .pf-mouth-strain,#holo-pack-opening .pack-face .pf-mouth-open,#holo-pack-opening .pack-face .pf-sweat{display:none}
+    #holo-pack-opening[data-pack-face="strain"] .pf-open,#holo-pack-opening[data-pack-face="strain"] .pf-mouth-smile,#holo-pack-opening[data-pack-face="happy"] .pf-open,#holo-pack-opening[data-pack-face="happy"] .pf-mouth-smile{display:none}
+    #holo-pack-opening[data-pack-face="strain"] .pf-strain,#holo-pack-opening[data-pack-face="strain"] .pf-mouth-strain,#holo-pack-opening[data-pack-face="strain"] .pf-sweat,#holo-pack-opening[data-pack-face="happy"] .pf-happy,#holo-pack-opening[data-pack-face="happy"] .pf-mouth-open{display:inline}
+    #holo-pack-opening .pack-face,#holo-pack-opening .pack-face g{transform-box:fill-box;transform-origin:center}
+    #holo-pack-opening .pf-eyes{transition:transform .14s ease-out}
+    #holo-pack-opening .pf-open.is-blink{animation:holo-blink .17s ease-in-out}
+    #holo-pack-opening[data-pack-face="strain"] .pack-face{animation:holo-tremble .09s linear infinite}
+    #holo-pack-opening[data-pack-face="strain"] .pf-strain{animation:holo-squeeze .28s cubic-bezier(.2,.9,.3,1.3)}
+    #holo-pack-opening[data-pack-face="strain"] .pf-blush{opacity:1;fill:#ff6f95}
+    #holo-pack-opening[data-pack-face="strain"] .pf-sweat{animation:holo-sweat .7s ease-in infinite}
     #holo-pack-opening .pack-controls{position:absolute;left:16px;right:16px;bottom:24px;display:flex;flex-direction:column;align-items:center;gap:8px;z-index:8}
     #holo-pack-opening .open-action{border:1px solid #dcdfd3;background:#fffef4e8;color:#454b40;border-radius:5px;padding:10px 18px;font-size:11px;letter-spacing:.2px;box-shadow:0 2px 3px #60644312;transition:background .2s,transform .2s,opacity .2s;min-height:37px}
     #holo-pack-opening .open-action:hover{background:#fff;transform:translateY(-1px)}
@@ -120,6 +140,7 @@
     #holo-pack-opening[data-torn="true"] .rip-hint,#holo-pack-opening[data-state="opening"] .rip-hint,#holo-pack-opening[data-state="revealed"] .rip-hint{opacity:0}
     #holo-pack-opening[data-state="revealed"] .pack-zone{visibility:hidden}
     #holo-pack-opening[data-state="revealed"] .cards-tray{pointer-events:auto}
+    #holo-pack-opening[data-ring] .cards-tray{z-index:5}
     #holo-pack-opening .card-slot:hover,#holo-pack-opening .card-slot:focus-within{z-index:10}
     @keyframes holo-idle{0%,100%{transform:translateY(0) rotate(-2deg) rotateY(-5deg)}50%{transform:translateY(-9px) rotate(1.2deg) rotateY(4deg)}}
     @keyframes holo-hint{0%,100%{transform:translateX(0);opacity:.5}50%{transform:translateX(5px);opacity:1}}
@@ -130,10 +151,17 @@
     @keyframes holo-spin{from{transform:translateZ(-2px) rotate(0deg)}to{transform:translateZ(-2px) rotate(360deg)}}
     @keyframes holo-pulse{0%,100%{opacity:.7;transform:translateZ(-2px) scale(.95)}50%{opacity:1;transform:translateZ(-2px) scale(1.05)}}
     @keyframes holo-pop{0%{transform:scale(1)}35%{transform:scale(1.09)}100%{transform:scale(1)}}
+    @keyframes holo-glint{0%{transform:translateX(-80%)}28%,100%{transform:translateX(80%)}}
+    @keyframes holo-twinkle{0%,100%{opacity:0;transform:scale(.3) rotate(0deg)}45%{opacity:1;transform:scale(1.15) rotate(45deg)}70%{opacity:0;transform:scale(.4) rotate(90deg)}}
+    @keyframes holo-face-pop{0%{transform:scale(1)}40%{transform:scale(1.18,1.1)}70%{transform:scale(.96,1.02)}100%{transform:scale(1)}}
+    @keyframes holo-blink{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.08)}}
+    @keyframes holo-tremble{0%{transform:translate(.5px,0)}25%{transform:translate(-.5px,.4px)}50%{transform:translate(.4px,-.4px)}75%{transform:translate(-.4px,0)}100%{transform:translate(.5px,0)}}
+    @keyframes holo-squeeze{0%{transform:scale(1.35,.35)}60%{transform:scale(.9,1.15)}100%{transform:scale(1)}}
+    @keyframes holo-sweat{0%{transform:translateY(-1px);opacity:0}30%{opacity:1}100%{transform:translateY(5px);opacity:0}}
     @media(min-width:900px){#holo-pack-opening .holo-stage{height:max(570px,calc(var(--rows,1)*250px + 190px))}#holo-pack-opening .pack-zone{width:180px;height:261px}#holo-pack-opening .pack-emblem{width:138px;height:149px;left:19px;top:56px}#holo-pack-opening .rip-hint{top:calc(49% + 158px)}#holo-pack-opening .pack-title{font-size:23px}}
-    @media(max-width:620px){#holo-pack-opening .holo-stage{height:max(470px,calc(var(--rows,1)*180px + 190px))}#holo-pack-opening .holo-header{left:22px;right:22px;top:21px}#holo-pack-opening .rates-panel{right:16px;top:58px}#holo-pack-opening .cards-tray{left:5%;right:5%;gap:8px}#holo-pack-opening .card-slot{width:calc((100% - 32px)/5);flex-basis:calc((100% - 32px)/5)}#holo-pack-opening .card-copy{left:6px;right:5px}#holo-pack-opening .card-name{font-size:10px}#holo-pack-opening .card-tagline{font-size:5px;margin-top:3px}#holo-pack-opening .card-number{left:6px;top:6px;font-size:4.5px}#holo-pack-opening .card-bottom{left:6px;right:5px;bottom:6px;font-size:4px}#holo-pack-opening .card-symbol{font-size:6px}#holo-pack-opening .rainbow{width:400px}}
+    @media(max-width:620px){#holo-pack-opening .holo-stage{height:max(470px,calc(var(--rows,1)*180px + 190px))}#holo-pack-opening .holo-header{left:22px;right:22px;top:21px}#holo-pack-opening .rates-panel{right:16px;top:58px}#holo-pack-opening .cards-tray{left:5%;right:5%;gap:8px}#holo-pack-opening .card-slot{width:calc((100% - 32px)/5);flex-basis:calc((100% - 32px)/5)}#holo-pack-opening .card-copy{left:4px;right:4px;padding:3px 5px 4px;border-radius:5px}#holo-pack-opening .card-name{font-size:10px}#holo-pack-opening .card-tagline{font-size:5px;margin-top:3px}#holo-pack-opening .card-number{left:4px;top:4px;padding:1px 4px;font-size:4.5px}#holo-pack-opening .card-bottom{left:6px;right:5px;bottom:3px;font-size:4px}#holo-pack-opening .card-symbol{font-size:6px}#holo-pack-opening .rainbow{width:400px}}
     @media(max-width:440px){#holo-pack-opening .holo-stage{height:max(540px,calc(var(--mobile-rows,2)*150px + 220px))}#holo-pack-opening .header-tools{gap:4px}#holo-pack-opening .tool-button{padding:0 8px}#holo-pack-opening .sound-toggle{padding:0}#holo-pack-opening .cards-tray{flex-wrap:wrap;gap:13px 12px;top:48%;left:10%;right:10%}#holo-pack-opening .card-slot{width:calc((100% - 24px)/3);max-width:100px;flex:none}#holo-pack-opening .card-name{font-size:11px}#holo-pack-opening .card-tagline{font-size:5.5px}#holo-pack-opening .card-bottom{font-size:4.5px}#holo-pack-opening .card-number{font-size:5px}#holo-pack-opening .card-button:hover,#holo-pack-opening .card-button:focus-visible,#holo-pack-opening .card-button.is-selected{transform:translateY(-8px) rotate(0deg) scale(1.05)}#holo-pack-opening .brand-sub{font-size:8px;letter-spacing:1px}#holo-pack-opening .pack-controls{bottom:18px}#holo-pack-opening .rainbow{width:340px}}
-    @media(prefers-reduced-motion:reduce){#holo-pack-opening .pack-float,#holo-pack-opening .rip-hint span,#holo-pack-opening .card-halo,#holo-pack-opening .pack-glow,#holo-pack-opening .pack-shine,#holo-pack-opening .tear-guide:after{animation:none!important}#holo-pack-opening *,#holo-pack-opening *:before,#holo-pack-opening *:after{transition:none!important}}
+    @media(prefers-reduced-motion:reduce){#holo-pack-opening .pack-float,#holo-pack-opening .rip-hint span,#holo-pack-opening .card-halo,#holo-pack-opening .pack-glow,#holo-pack-opening .pack-shine,#holo-pack-opening .tear-guide:after,#holo-pack-opening .card-glint,#holo-pack-opening .card-twinkle,#holo-pack-opening .pack-face,#holo-pack-opening .pf-sweat{animation:none!important}#holo-pack-opening *,#holo-pack-opening *:before,#holo-pack-opening *:after{transition:none!important}}
   </style>
   <section class="holo-stage" aria-label="卡包拆封与抽卡动画">
     <div class="ambient" aria-hidden="true"></div><div class="stage-grain" aria-hidden="true"></div>
@@ -164,9 +192,16 @@
                 <path d="M80 9 Q89 61 147 80 Q94 90 80 150 Q66 95 13 80 Q66 63 80 9Z" fill="url(#holo-metal)" stroke="#e8f5e8" stroke-width="1.3"/>
                 <path d="M80 9 81 79 147 80 90 87 80 150 73 89 13 80 72 73Z" fill="url(#holo-shard)" opacity=".68"/>
                 <path d="M80 9 73 73 13 80 65 64Z" fill="#ffffeb" opacity=".85"/><path d="M81 79 80 150 90 87 147 80Z" fill="#6f73ac" opacity=".5"/>
-                <ellipse cx="68" cy="83" rx="3.4" ry="4.9" fill="#293849"/><ellipse cx="91" cy="83" rx="3.4" ry="4.9" fill="#293849"/>
-                <ellipse cx="61" cy="91" rx="5" ry="2.5" fill="#ef9abb" opacity=".6"/><ellipse cx="99" cy="91" rx="5" ry="2.5" fill="#ef9abb" opacity=".6"/>
-                <path d="M75 94 Q80 98 85 94" fill="none" stroke="#526074" stroke-width="1.7" stroke-linecap="round"/>
+                <g class="pack-face">
+                  <g class="pf-open"><g class="pf-eyes"><ellipse cx="68" cy="83" rx="3.6" ry="5.1" fill="#293849"/><ellipse cx="91" cy="83" rx="3.6" ry="5.1" fill="#293849"/><circle cx="66.9" cy="81" r="1.15" fill="#fff" opacity=".9"/><circle cx="89.9" cy="81" r="1.15" fill="#fff" opacity=".9"/></g></g>
+                  <g class="pf-strain" fill="none" stroke="#293849" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M63.5 79 72 83 63.5 87"/><path d="M95.5 79 87 83 95.5 87"/></g>
+                  <g class="pf-happy" fill="none" stroke="#293849" stroke-width="2.2" stroke-linecap="round"><path d="M63.5 85 Q68 78.5 72.5 85"/><path d="M86.5 85 Q91 78.5 95.5 85"/></g>
+                  <g class="pf-blush"><ellipse cx="61" cy="91" rx="5" ry="2.5" fill="#ef9abb" opacity=".6"/><ellipse cx="99" cy="91" rx="5" ry="2.5" fill="#ef9abb" opacity=".6"/></g>
+                  <path class="pf-mouth-smile" d="M75 94 Q80 98 85 94" fill="none" stroke="#526074" stroke-width="1.7" stroke-linecap="round"/>
+                  <path class="pf-mouth-strain" d="M74 95.5 q1.5 -2.2 3 0 t3 0 t3 0 t3 0" fill="none" stroke="#526074" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path class="pf-mouth-open" d="M75.5 93.5 Q80 101 84.5 93.5Z" fill="#7a3b4a" stroke="#526074" stroke-width="1" stroke-linejoin="round"/>
+                  <path class="pf-sweat" d="M103 68 q3.2 5 0 7.4 q-3.2 -2.4 0 -7.4Z" fill="#bfe8ff" stroke="#7cc4ee" stroke-width=".6"/>
+                </g>
               </svg>
               <div class="pack-caption"></div><div class="pack-series"></div><div class="pack-crease"></div><div class="pack-shine"></div>
             </div>
@@ -315,7 +350,11 @@
           tone(t, base, { duration: .22, gain: .08 }); tone(t, base * 2, { duration: .12, gain: .025 }); grain(t, { duration: .02, freq: 4000, gain: .05 });
           if (rank(rarity) >= 2) tone(t + .06, base * 1.5, { duration: .45, type: 'triangle', gain: .06 });
           if (rarity === 'legendary') [1, 1.25, 1.5, 2].forEach((m, i) => tone(t + .1 + i * .08, base * m, { duration: .9, gain: .05 }));
-        }
+        },
+        face(kind) { if (!live()) return; const t = ctx.currentTime, base = { heart: 880, wink: 1046.5, star: 1318.5, happy: 987.8, wow: 659.3, blink: 1174.7 }[kind] || 880; tone(t, base * .75, { duration: .12, to: base * 1.25, type: 'triangle', gain: .09 }); tone(t + .1, base * 1.25, { duration: .16, to: base * 1.5, gain: .06 }); },
+        strain() { if (!live()) return; const t = ctx.currentTime; tone(t, 330, { duration: .18, to: 260, type: 'triangle', gain: .05 }); },
+        swirl(duration) { if (!live()) return; const t = ctx.currentTime, notes = [523.25, 659.25, 783.99, 1046.5, 1318.5, 1567.98]; notes.forEach((f, i) => tone(t + duration * i / notes.length, f, { duration: .35, type: 'triangle', gain: .045 })); grain(t, { duration: Math.max(.3, duration), freq: 500, freqTo: 4000, q: .4, gain: .05 }); },
+        celebrate() { if (!live()) return; const t = ctx.currentTime; grain(t, { duration: .08, freq: 1400, gain: .25 }); tone(t, 180, { duration: .12, to: 90, gain: .18 }); [1046.5, 1318.5, 1567.98, 2093].forEach((f, i) => tone(t + .05 + i * .05, f, { duration: .45, type: 'triangle', gain: .05 })); }
       };
     })();
 
@@ -370,7 +409,20 @@
     /* ---------- 卡面 ---------- */
     const safeArt = (kind, key) => {
       const defs = `<defs><radialGradient id="${key}-gloss" cx=".3" cy=".22" r=".85"><stop stop-color="#fff6d1"/><stop offset=".18" stop-color="#ffb79b"/><stop offset=".65" stop-color="#fb765d"/><stop offset="1" stop-color="#b94d43"/></radialGradient><radialGradient id="${key}-blue" cx=".3" cy=".2" r=".9"><stop stop-color="#a9f5fb"/><stop offset=".3" stop-color="#779ef5"/><stop offset=".68" stop-color="#5564c5"/><stop offset="1" stop-color="#384c9b"/></radialGradient><linearGradient id="${key}-lime" x1="0" x2=".8" y1="0" y2="1"><stop stop-color="#fcffa5"/><stop offset=".3" stop-color="#e1f73f"/><stop offset="1" stop-color="#a1c224"/></linearGradient><linearGradient id="${key}-gold" x1=".2" x2=".9" y1="0" y2="1"><stop stop-color="#fffad0"/><stop offset=".35" stop-color="#f8ec53"/><stop offset=".75" stop-color="#e6b22d"/><stop offset="1" stop-color="#b57b25"/></linearGradient><radialGradient id="${key}-purple" cx=".25" cy=".2" r="1"><stop stop-color="#dac2f6"/><stop offset=".4" stop-color="#a36ed5"/><stop offset="1" stop-color="#493379"/></radialGradient></defs>`;
-      const face = (x, y, spacing = 22) => `<ellipse cx="${x - spacing / 2}" cy="${y}" rx="4" ry="6.5" fill="#29343d"/><ellipse cx="${x + spacing / 2}" cy="${y}" rx="4" ry="6.5" fill="#29343d"/><ellipse cx="${x - spacing / 2 - 1}" cy="${y - 2}" rx="1.1" ry="1.8" fill="#fff" opacity=".8"/><ellipse cx="${x + spacing / 2 - 1}" cy="${y - 2}" rx="1.1" ry="1.8" fill="#fff" opacity=".8"/><ellipse cx="${x - 22}" cy="${y + 10}" rx="7" ry="3.8" fill="#ed7b87" opacity=".55"/><ellipse cx="${x + 22}" cy="${y + 10}" rx="7" ry="3.8" fill="#ed7b87" opacity=".55"/><path d="M${x - 4} ${y + 13} Q${x} ${y + 17} ${x + 4} ${y + 13}" fill="none" stroke="#584349" stroke-width="2" stroke-linecap="round"/>`;
+      const face = (x, y, gap = 22) => {
+        const l = x - gap / 2, r = x + gap / 2, ink = '#29343d';
+        const open = cx => `<ellipse cx="${cx}" cy="${y}" rx="4" ry="6.5" fill="${ink}"/><ellipse cx="${cx - 1}" cy="${y - 2}" rx="1.1" ry="1.8" fill="#fff" opacity=".85"/>`;
+        const shut = cx => `<path d="M${cx - 5} ${y} Q${cx} ${y + 4.5} ${cx + 5} ${y}" fill="none" stroke="${ink}" stroke-width="2.4" stroke-linecap="round"/>`;
+        const arc = cx => `<path d="M${cx - 5} ${y + 2} Q${cx} ${y - 5.5} ${cx + 5} ${y + 2}" fill="none" stroke="${ink}" stroke-width="2.4" stroke-linecap="round"/>`;
+        const heart = cx => `<path d="M${cx} ${y + 6} C${cx - 10} ${y - 1} ${cx - 6} ${y - 10} ${cx} ${y - 4} C${cx + 6} ${y - 10} ${cx + 10} ${y - 1} ${cx} ${y + 6}Z" fill="#ff4f7f" stroke="#c42356" stroke-width="1"/><ellipse cx="${cx - 3}" cy="${y - 3}" rx="1.6" ry="1.1" fill="#fff" opacity=".8"/>`;
+        const starEye = cx => { const pts = []; for (let k = 0; k < 10; k++) { const a = -Math.PI / 2 + k * Math.PI / 5, rr = k % 2 ? 3.2 : 7.6; pts.push(`${(cx + Math.cos(a) * rr).toFixed(1)},${(y + Math.sin(a) * rr).toFixed(1)}`); } return `<polygon points="${pts.join(' ')}" fill="#ffd21f" stroke="#c88a00" stroke-width="1" stroke-linejoin="round"/>`; };
+        const wow = cx => `<circle cx="${cx}" cy="${y}" r="6.2" fill="#fff" stroke="${ink}" stroke-width="2"/><circle cx="${cx}" cy="${y + .5}" r="3" fill="${ink}"/>`;
+        return `<g class="face"><g class="fx fx-normal"><g class="look">${open(l)}${open(r)}</g></g><g class="fx fx-blink">${shut(l)}${shut(r)}</g><g class="fx fx-wink">${open(l)}${shut(r)}</g><g class="fx fx-heart">${heart(l)}${heart(r)}</g><g class="fx fx-star">${starEye(l)}${starEye(r)}</g><g class="fx fx-happy">${arc(l)}${arc(r)}</g><g class="fx fx-wow">${wow(l)}${wow(r)}</g>`
+          + `<g class="blush" opacity=".55"><ellipse cx="${x - 22}" cy="${y + 10}" rx="7" ry="3.8" fill="#ed7b87"/><ellipse cx="${x + 22}" cy="${y + 10}" rx="7" ry="3.8" fill="#ed7b87"/></g>`
+          + `<path class="mouth m-smile" d="M${x - 4} ${y + 13} Q${x} ${y + 17} ${x + 4} ${y + 13}" fill="none" stroke="#584349" stroke-width="2" stroke-linecap="round"/>`
+          + `<path class="mouth m-grin" d="M${x - 6} ${y + 12} Q${x} ${y + 21} ${x + 6} ${y + 12}Z" fill="#8a3a4a" stroke="#584349" stroke-width="1.6" stroke-linejoin="round"/>`
+          + `<ellipse class="mouth m-open" cx="${x}" cy="${y + 15}" rx="3.6" ry="4.4" fill="#8a3a4a" stroke="#584349" stroke-width="1.4"/></g>`;
+      };
       let body;
       if (kind === 'planet') body = `<ellipse cx="100" cy="91" rx="82" ry="25" transform="rotate(-18 100 91)" fill="none" stroke="#e9ef9e" stroke-width="8"/><circle cx="100" cy="82" r="46" fill="url(#${key}-blue)"/><ellipse cx="83" cy="57" rx="17" ry="10" transform="rotate(-25 83 57)" fill="#fff" opacity=".35"/>${face(100, 85)}<path d="M23 109 C49 131 158 103 179 68" fill="none" stroke="#f9f3b0" stroke-width="7" stroke-linecap="round"/><circle cx="162" cy="37" r="3" fill="#efffc4"/><circle cx="35" cy="47" r="2" fill="#b6e3f0"/>`;
       else if (kind === 'cube') body = `<g transform="rotate(-8 100 87)"><path d="M53 39 137 34 151 49 146 130 132 142 52 136 41 120 41 55Z" fill="#96b727"/><path d="M53 39 137 34 151 49 64 54 41 55Z" fill="#fbffa0"/><path d="M137 34 151 49 146 130 132 142 135 56Z" fill="#a5c22c"/><rect x="43" y="43" width="92" height="96" rx="19" fill="url(#${key}-lime)"/><path d="M55 51 Q78 42 103 48" stroke="#ffffdf" stroke-width="6" opacity=".5" stroke-linecap="round" fill="none"/>${face(88, 91, 26)}</g>`;
@@ -394,7 +446,7 @@
         const button = document.createElement('button'); button.type = 'button'; button.className = 'card-button'; button.disabled = true;
         button.setAttribute('aria-label', `${card.name}，${rarityNames[card.rarity]}`); button.setAttribute('aria-pressed', 'false');
         const surface = document.createElement('div'); surface.className = 'card-surface';
-        const grid = document.createElement('div'); grid.className = 'card-grid';
+        slot.dataset.face = 'normal';
         const number = document.createElement('div'); number.className = 'card-number';
         number.textContent = [cardLabel, String(card.index + 1).padStart(2, '0')].filter(Boolean).join(' · ');
         const artBox = document.createElement('div'); artBox.className = 'card-art';
@@ -407,18 +459,30 @@
         const rarityText = document.createElement('span'); rarityText.textContent = rarityNames[card.rarity];
         const symbol = document.createElement('span'); symbol.className = 'card-symbol'; symbol.textContent = symbols[card.rarity]; bottom.append(rarityText, symbol);
         const shine = document.createElement('div'); shine.className = 'holo-overlay';
-        surface.append(grid, number, artBox, copy, bottom, shine); button.append(surface); slot.append(button); tray.append(slot);
+        const glint = document.createElement('div'); glint.className = 'card-glint';
+        slot.style.setProperty('--glint-delay', `${(index * .45 + rand() * .6).toFixed(2)}s`);
+        const twinkles = Array.from({ length: { common: 0, rare: 2, epic: 3, legendary: 5 }[card.rarity] }, () => {
+          const t = document.createElement('span'); t.className = 'card-twinkle';
+          t.style.left = `${(8 + rand() * 78).toFixed(1)}%`; t.style.top = `${(8 + rand() * 52).toFixed(1)}%`; t.style.setProperty('--twinkle-delay', `${(rand() * 2.2).toFixed(2)}s`);
+          return t;
+        });
+        surface.append(number, artBox, copy, bottom, shine, glint, ...twinkles); button.append(surface); slot.append(button); tray.append(slot);
+        const settle = () => { ['--rx', '--ry'].forEach(v => surface.style.setProperty(v, '0deg')); ['--ax', '--ay'].forEach(v => surface.style.setProperty(v, '0px')); ['--lx', '--ly'].forEach(v => slot.style.setProperty(v, '0px')); surface.style.setProperty('--shine', '0%'); };
+        button.addEventListener('pointerenter', () => { if (state === 'revealed' && slot.dataset.face === 'normal') setFace(slot, 'blink', 160); });
         button.addEventListener('pointermove', event => {
           if (state !== 'revealed' || reduced.matches || event.pointerType === 'touch') return;
           const box = button.getBoundingClientRect(), px = (event.clientX - box.left) / box.width - .5, py = (event.clientY - box.top) / box.height - .5;
-          surface.style.setProperty('--rx', `${-py * 15}deg`); surface.style.setProperty('--ry', `${px * 20}deg`); surface.style.setProperty('--shine', `${px * 20}%`);
+          surface.style.setProperty('--rx', `${(-py * 18).toFixed(2)}deg`); surface.style.setProperty('--ry', `${(px * 24).toFixed(2)}deg`); surface.style.setProperty('--shine', `${(px * 24).toFixed(1)}%`);
+          surface.style.setProperty('--ax', `${(px * 7).toFixed(2)}px`); surface.style.setProperty('--ay', `${(py * 5).toFixed(2)}px`);
+          slot.style.setProperty('--lx', `${(px * 7).toFixed(2)}px`); slot.style.setProperty('--ly', `${(py * 6).toFixed(2)}px`);
         });
-        button.addEventListener('pointerleave', () => { surface.style.setProperty('--rx', '0deg'); surface.style.setProperty('--ry', '0deg'); surface.style.setProperty('--shine', '0%'); });
+        button.addEventListener('pointerleave', settle);
         button.addEventListener('click', () => {
           if (state !== 'revealed') return;
           selected = selected === index ? -1 : index;
           cardButtons.forEach((node, i) => { node.classList.toggle('is-selected', i === selected); node.setAttribute('aria-pressed', String(i === selected)); });
           say(selected < 0 ? revealedText() : L('selected', { name: card.name, rarity: rarityNames[card.rarity] }));
+          express(slot);
           save();
         });
         return slot;
@@ -435,6 +499,9 @@
     const spark = (x, y, color, power = 1) => particle({ kind: 'spark', x, y, color, vx: (rand() - .5) * 3 * power, vy: (-rand() * 4 - 1.5) * power, size: rand() * 1.8 + 1.3, life: 600 + rand() * 500, g: .07, drag: .975 });
     const streak = (x, y, color) => particle({ kind: 'streak', x, y, color, vx: (rand() - .3) * 3.2, vy: -rand() * 4.5 - 2, size: 2.4, life: 520 + rand() * 380, g: .09, drag: .97 });
     const star = (x, y, color) => { const a = rand() * Math.PI * 2, v = 1.5 + rand() * 4.5; return particle({ kind: 'star', x, y, color, vx: Math.cos(a) * v, vy: Math.sin(a) * v - 1.2, size: 2.6 + rand() * 3.6, life: 1100 + rand() * 900, g: .025, drag: .962, vs: .03 }); };
+    const PETALS = ['#ff6fa3', '#ffd23f', '#7ee081', '#5ec8ff', '#b388ff', '#ff9a3c', '#ff4d6d', '#ffffff'];
+    const petal = (x, y, color) => particle({ kind: 'petal', x, y, color, vx: (rand() - .5) * 1.4, vy: 1 + rand() * 2.2, g: .018, drag: .996, size: 3 + rand() * 3.5, life: 2700 + rand() * 1400, vs: .05 + rand() * .08, sway: .5 + rand() * .7, phase: rand() * 6 });
+    const heartBit = (x, y) => { const a = -Math.PI / 2 + (rand() - .5) * 1.7, v = 1.4 + rand() * 2.4; return particle({ kind: 'heart', x, y, color: ['#ff4f7f', '#ff7aa2', '#ff9cc0'][Math.floor(rand() * 3)], vx: Math.cos(a) * v, vy: Math.sin(a) * v, g: -.012, drag: .965, size: 3 + rand() * 3, life: 900 + rand() * 500, vs: 0, spin: (rand() - .5) * .6 }); };
     function spawn(list) {
       if (reduced.matches || !context || !list.length) return;
       particles.push(...list);
@@ -447,10 +514,13 @@
       particles = particles.filter(p => {
         p.age += dt * 16.67; if (p.age >= p.life) return false;
         p.vy += p.g * dt; p.x += p.vx * dt; p.y += p.vy * dt; p.vx *= p.drag; p.vy *= p.drag; p.spin += p.vs * dt;
+        if (p.sway) p.x += Math.sin(p.age / 240 + p.phase) * p.sway * dt;
         const alpha = Math.min(1, (1 - p.age / p.life) * 3);
         context.save(); context.globalAlpha = alpha; context.fillStyle = p.color; context.strokeStyle = p.color; context.translate(p.x, p.y);
         if (p.kind === 'confetti') { context.rotate(p.spin); context.fillRect(-p.size / 2, -p.size * .3, p.size, p.size * .6 * Math.cos(p.spin * 1.7)); }
         else if (p.kind === 'spark') { context.globalAlpha = alpha * .3; context.beginPath(); context.arc(0, 0, p.size * 2.8, 0, Math.PI * 2); context.fill(); context.globalAlpha = alpha; context.beginPath(); context.arc(0, 0, p.size, 0, Math.PI * 2); context.fill(); }
+        else if (p.kind === 'petal') { context.rotate(p.spin); context.scale(1, Math.cos(p.spin * 1.3)); context.beginPath(); context.ellipse(0, 0, p.size * 1.25, p.size * .7, 0, 0, Math.PI * 2); context.fill(); }
+        else if (p.kind === 'heart') { const s = p.size; context.rotate(p.spin); context.beginPath(); context.moveTo(0, s * .9); context.bezierCurveTo(-s * 1.6, -s * .2, -s * .9, -s * 1.5, 0, -s * .6); context.bezierCurveTo(s * .9, -s * 1.5, s * 1.6, -s * .2, 0, s * .9); context.fill(); }
         else if (p.kind === 'streak') { context.lineWidth = p.size; context.lineCap = 'round'; context.beginPath(); context.moveTo(0, 0); context.lineTo(-p.vx * 3.2, -p.vy * 3.2); context.stroke(); }
         else { const s = p.size; context.rotate(p.spin); context.beginPath(); context.moveTo(0, -s * 1.7); context.quadraticCurveTo(0, 0, s * 1.7, 0); context.quadraticCurveTo(0, 0, 0, s * 1.7); context.quadraticCurveTo(0, 0, -s * 1.7, 0); context.quadraticCurveTo(0, 0, 0, -s * 1.7); context.fill(); }
         context.restore(); return true;
@@ -538,6 +608,65 @@
     }
     new ResizeObserver(measure).observe(pack);
 
+    /* ---------- 表情：卡包的眼睛、卡面表情、眨眼、入场 ---------- */
+    const packEyes = $('.pf-eyes'), packOpenEyes = $('.pf-open'), emblem = $('.pack-emblem'), floorShadow = $('.floor-shadow');
+    const EXPRESSIONS = ['heart', 'wink', 'star', 'happy', 'wow'];
+    const faceTimers = new WeakMap();
+    let strainTimer = 0, blinkTimer = 0, enterToken = 0;
+    function setPackFace(face) { if (face) root.dataset.packFace = face; else delete root.dataset.packFace; }
+    function restartClass(node, name) { if (!node) return; node.classList.remove(name); void node.getBoundingClientRect(); node.classList.add(name); }
+    function blinkPack() { if (!packOpenEyes || root.dataset.packFace) return; restartClass(packOpenEyes, 'is-blink'); setTimeout(() => packOpenEyes.classList.remove('is-blink'), 220); }
+    function setFace(slot, face, hold) {
+      if (!slot.querySelector('.face')) return;
+      slot.dataset.face = face; clearTimeout(faceTimers.get(slot));
+      if (hold) faceTimers.set(slot, setTimeout(() => { slot.dataset.face = 'normal'; }, hold));
+    }
+    function express(slot) {
+      const options = EXPRESSIONS.filter(kind => kind !== slot.dataset.face), kind = options[Math.floor(rand() * options.length)];
+      setFace(slot, kind, 1900); restartClass(slot.querySelector('.face') || slot.querySelector('.card-art img'), 'is-popping');
+      audio.face(kind);
+      const box = slot.querySelector('.card-art').getBoundingClientRect(), stageBox = stage.getBoundingClientRect();
+      const x = box.left - stageBox.left + box.width / 2, y = box.top - stageBox.top + box.height * .45;
+      if (kind === 'heart') spawn(Array.from({ length: 7 }, () => heartBit(x + (rand() - .5) * box.width * .5, y)));
+      else if (kind === 'star') spawn(Array.from({ length: 10 }, (_, i) => star(x, y, GOLD[i % GOLD.length])));
+      else spawn(Array.from({ length: 6 }, (_, i) => spark(x + (rand() - .5) * box.width * .6, y, VIVID[i % VIVID.length], .7)));
+    }
+    function scheduleBlinks() {
+      clearTimeout(blinkTimer);
+      blinkTimer = setTimeout(() => {
+        if (!reduced.matches) {
+          if (state === 'sealed') blinkPack();
+          if (state === 'revealed') { const idle = slots.filter(slot => slot.dataset.face === 'normal' && slot.querySelector('.face')); const pick = idle[Math.floor(rand() * idle.length)]; if (pick) setFace(pick, 'blink', 150); }
+        }
+        scheduleBlinks();
+      }, 1300 + rand() * 2300);
+    }
+    stage.addEventListener('pointermove', event => {
+      if (!packEyes || state !== 'sealed') return;
+      const box = emblem.getBoundingClientRect(); if (!box.width) return;
+      const dx = event.clientX - (box.left + box.width * .5), dy = event.clientY - (box.top + box.height * .53), dist = Math.hypot(dx, dy) || 1, k = Math.min(1, dist / 110);
+      packEyes.style.transform = `translate(${(dx / dist * 3.4 * k).toFixed(2)}px,${(dy / dist * 2.8 * k).toFixed(2)}px)`;
+    });
+    stage.addEventListener('pointerleave', () => { if (packEyes) packEyes.style.transform = ''; });
+    function enterPack() {
+      const token = ++enterToken;
+      if (reduced.matches) { delete root.dataset.entering; return; }
+      root.dataset.entering = 'true';
+      const distance = Math.max(260, stage.clientWidth * .6);
+      const entry = animate(floating, [
+        { transform: `translate(${distance}px,-36px) rotate(18deg)`, opacity: 0 },
+        { transform: `translate(${distance * .5}px,-54px) rotate(10deg)`, opacity: 1, offset: .38 },
+        { transform: 'translate(-16px,8px) rotate(-6deg)', offset: .78 },
+        { transform: 'translate(0px,0px) rotate(-2deg) rotateY(-5deg)' }
+      ], { duration: 1200, easing: 'cubic-bezier(.25,.7,.3,1)' });
+      animate(floorShadow, [{ opacity: 0, transform: 'translateX(60%) scaleX(.5)' }, { opacity: 1, transform: 'translateX(-50%) scaleX(1)' }], { duration: 1200, easing: 'cubic-bezier(.25,.7,.3,1)' });
+      entry.then(() => {
+        if (token !== enterToken) return;
+        animations.forEach(animation => { const target = animation.effect?.target; if (target === floating || target === floorShadow) animation.cancel(); });
+        delete root.dataset.entering; blinkPack();
+      });
+    }
+
     /* ---------- 交互：悬停、点击震动、滑动撕包 ---------- */
     function resetTilt() { tilt.style.setProperty('--prx', '0deg'); tilt.style.setProperty('--pry', '0deg'); }
     function hoverTilt(event) {
@@ -546,8 +675,8 @@
       tilt.style.setProperty('--prx', `${(-py * 12).toFixed(2)}deg`); tilt.style.setProperty('--pry', `${(px * 16).toFixed(2)}deg`);
     }
     function nudge(fromKeyboard) {
-      if (state !== 'sealed') return;
-      audio.unlock(); audio.thud();
+      if (state !== 'sealed' || root.dataset.entering) return;
+      audio.unlock(); audio.thud(); blinkPack();
       if (!reduced.matches) shaker.animate([
         { transform: 'translateX(0) rotate(0deg)' }, { transform: 'translateX(-9px) rotate(-3deg)', offset: .15 }, { transform: 'translateX(8px) rotate(2.5deg)', offset: .35 },
         { transform: 'translateX(-6px) rotate(-1.5deg)', offset: .55 }, { transform: 'translateX(4px) rotate(1deg)', offset: .75 }, { transform: 'translateX(0) rotate(0deg)' }
@@ -560,13 +689,15 @@
     function endDrag(event) {
       if (!drag || (event && drag.id !== event.pointerId)) return;
       suppressClick = drag.moved > 6; drag = null; delete root.dataset.dragging;
+      if (state === 'sealed') setPackFace(null);
     }
     zone.addEventListener('pointerdown', event => {
-      if (state !== 'sealed' || (event.pointerType === 'mouse' && event.button !== 0)) return;
+      if (state !== 'sealed' || root.dataset.entering || (event.pointerType === 'mouse' && event.button !== 0)) return;
       event.preventDefault(); audio.unlock(); root.dataset.dragging = 'true'; resetTilt();
+      clearTimeout(strainTimer); if (root.dataset.packFace !== 'strain') { setPackFace('strain'); audio.strain(); }
       const box = pack.getBoundingClientRect(), scale = box.width / (W || box.width), startInside = (event.clientX - box.left) / scale;
       drag = { id: event.pointerId, x: event.clientX, y: event.clientY, scale, from: front, span: Math.max(60, W - startInside + 6), moved: 0 };
-      zone.setPointerCapture(event.pointerId);
+      try { zone.setPointerCapture(event.pointerId); } catch {}
     });
     zone.addEventListener('pointermove', event => {
       if (!drag) { hoverTilt(event); return; }
@@ -583,8 +714,11 @@
       suppressClick = false; nudge(event.detail === 0);
     });
     pack.addEventListener('keydown', event => {
-      if (state !== 'sealed' || event.key !== 'ArrowRight') return;
-      event.preventDefault(); audio.unlock(); advanceTear(Math.min(W, front + W * .25));
+      if (state !== 'sealed' || root.dataset.entering || event.key !== 'ArrowRight') return;
+      event.preventDefault(); audio.unlock();
+      if (root.dataset.packFace !== 'strain') audio.strain();
+      setPackFace('strain'); clearTimeout(strainTimer); strainTimer = setTimeout(() => { if (state === 'sealed' && !drag) setPackFace(null); }, 450);
+      advanceTear(Math.min(W, front + W * .25));
     });
 
     /* ---------- 开包演出 ---------- */
@@ -602,10 +736,17 @@
     }
     function burst(origin, best) {
       const list = [];
-      for (let i = 0; i < 72; i++) list.push(confettiBit(origin.x + (rand() - .5) * W * .8, origin.y, VIVID[i % VIVID.length]));
+      for (let i = 0; i < 44; i++) list.push(confettiBit(origin.x + (rand() - .5) * W * .8, origin.y, VIVID[i % VIVID.length]));
       for (let i = 0; i < 30; i++) list.push((i % 2 ? streak : spark)(origin.x + (rand() - .5) * W * .9, origin.y, VIVID[i % VIVID.length]));
       if (best === 'legendary') for (let i = 0; i < 44; i++) list.push(star(origin.x, origin.y, GOLD[i % GOLD.length]));
       else if (best === 'epic') for (let i = 0; i < 22; i++) list.push(star(origin.x, origin.y, EPIC[i % EPIC.length]));
+      spawn(list);
+    }
+    function celebrate(c) {
+      const width = stage.clientWidth, list = [];
+      for (let i = 0; i < 80; i++) list.push(petal(rand() * width, -12 - rand() * 80, PETALS[i % PETALS.length]));
+      for (let i = 0; i < 56; i++) list.push(confettiBit(c.x + (rand() - .5) * 40, c.y, VIVID[i % VIVID.length]));
+      for (let i = 0; i < 22; i++) list.push(star(c.x, c.y, i % 2 ? '#ffffff' : '#ffe066'));
       spawn(list);
     }
     function flashAt(origin) {
@@ -632,24 +773,43 @@
       pack.disabled = true; action.hidden = true; colorChoices.forEach(button => { button.disabled = true; });
       say(L('opening'));
       renderCards(drawn);
-      audio.rip(); audio.burst(best);
+      audio.rip(); audio.burst(best); setPackFace('happy');
       const flapFrom = flap.style.transform || 'none';
       animate(flap, [{ transform: flapFrom, opacity: 1 }, { transform: `${flapFrom} translate(-30px,-120px) rotate(38deg)`, opacity: 0 }], { duration: 560, easing: 'cubic-bezier(.2,.6,.3,1)' });
       sprayRainbow(origin); burst(origin, best);
       if (best === 'legendary') flashAt(origin);
-      const stageBox = stage.getBoundingClientRect();
+      const stageBox = stage.getBoundingClientRect(), zoneBox = zone.getBoundingClientRect();
+      const center = { x: zoneBox.left - stageBox.left + zoneBox.width / 2, y: zoneBox.top - stageBox.top + zoneBox.height * .48 };
+      const count = slots.length, firstBox = slots[0].getBoundingClientRect();
+      const radius = Math.max(60, Math.min(stage.clientWidth * .28, stage.clientHeight * .27, 170)) * (count < 3 ? .55 : 1);
+      const ringScale = Math.max(.42, Math.min(.68, (stage.clientHeight * .86 - 2 * radius) / firstBox.height));
+      const START = 200, OUT = 380, SPIN = 1250, LAND = 620, HOLD = 220, STEPS = 18;
+      const ease = t => .5 - Math.cos(Math.PI * t) / 2;
       const flights = slots.map((slot, index) => {
         const box = slot.getBoundingClientRect(), card = drawn[index];
-        const dx = stageBox.left + origin.x - (box.left + box.width / 2), dy = stageBox.top + origin.y + box.height * .55 - (box.top + box.height / 2);
-        const fan = (index - (slots.length - 1) / 2) * 9, finale = card.rarity === 'legendary' ? 180 : 0;
-        return animate(slot, [
-          { transform: `translate(${dx}px,${dy}px) rotate(${fan * .3}deg) scale(.7)`, opacity: 0 },
-          { transform: `translate(${dx + fan * 1.4}px,${dy - box.height * .9 - 30}px) rotate(${fan * 1.4}deg) scale(.86)`, opacity: 1, offset: .38 },
-          { transform: `translate(${-dx * .04}px,-13px) rotate(0deg) scale(1.015)`, opacity: 1, offset: .83 },
-          { transform: 'translate(0,0) rotate(0deg) scale(1)', opacity: 1 }
-        ], { duration: 1510, delay: 210 + index * 45 + finale, easing: 'cubic-bezier(.2,.62,.25,1)' }).then(() => { if (current === run) land(slot, card); });
+        const sx = box.left - stageBox.left + box.width / 2, sy = box.top - stageBox.top + box.height / 2;
+        const at = (x, y, extra) => `translate(${(x - sx).toFixed(1)}px,${(y - sy).toFixed(1)}px) ${extra}`;
+        const theta = -Math.PI / 2 + index * Math.PI * 2 / count, fan = (index - (count - 1) / 2) * 9;
+        const frames = [
+          { t: 0, transform: at(origin.x, origin.y + box.height * .5, `rotate(${fan * .3}deg) scale(.5)`), opacity: 0, easing: 'cubic-bezier(.2,.7,.3,1)' },
+          { t: OUT * .45, transform: at(origin.x + fan * 1.6, origin.y - box.height * .3, `rotate(${fan}deg) scale(.6)`), opacity: 1, easing: 'cubic-bezier(.3,.6,.4,1)' }
+        ];
+        for (let k = 0; k <= STEPS; k++) {
+          const phi = Math.PI * 2 * ease(k / STEPS), x = center.x + Math.cos(theta + phi) * radius, y = center.y + Math.sin(theta + phi) * radius;
+          frames.push({ t: OUT + SPIN * k / STEPS, transform: at(x, y, `rotate(${(Math.cos(theta + phi) * 8).toFixed(1)}deg) scale(${(ringScale * (1 + .07 * Math.sin(Math.PI * k / STEPS))).toFixed(3)})`), opacity: 1, easing: 'linear' });
+        }
+        let end = OUT + SPIN;
+        if (card.rarity === 'legendary') { end += HOLD; frames.push({ ...frames[frames.length - 1], t: end }); }
+        frames[frames.length - 1].easing = 'cubic-bezier(.25,.75,.3,1)';
+        frames.push({ t: end + LAND * .72, transform: 'translate(0px,-14px) rotate(0deg) scale(1.05)', opacity: 1, easing: 'ease-in-out' });
+        frames.push({ t: end + LAND, transform: 'translate(0px,0px) rotate(0deg) scale(1)', opacity: 1 });
+        const total = frames[frames.length - 1].t;
+        return animate(slot, frames.map(({ t, ...frame }) => ({ ...frame, offset: t / total })), { duration: total, delay: START, easing: 'linear' }).then(() => { if (current === run) land(slot, card); });
       });
-      animate(floating, [{ transform: 'translateY(0) rotate(-1deg)', opacity: 1 }, { transform: 'translateY(18px) rotate(2deg)', opacity: 1, offset: .28 }, { transform: 'translateY(450px) rotate(22deg)', opacity: 0 }], { duration: 950, delay: 420, easing: 'cubic-bezier(.55,.05,.8,.6)' });
+      setTimeout(() => { if (current === run) root.dataset.ring = 'true'; }, ms(START + OUT * .6));
+      setTimeout(() => { if (current === run) audio.swirl(ms(SPIN) / 1000); }, ms(START + OUT));
+      setTimeout(() => { if (current === run) { celebrate(center); audio.celebrate(); } }, ms(START + OUT + SPIN));
+      animate(floating, [{ transform: 'translateY(0) rotate(-1deg)', opacity: 1 }, { transform: 'translateY(18px) rotate(2deg)', opacity: 1, offset: .28 }, { transform: 'translateY(450px) rotate(22deg)', opacity: 0 }], { duration: 780, delay: 360, easing: 'cubic-bezier(.55,.05,.8,.6)' });
       await Promise.all(flights);
       if (current !== run) return;
       if (pity) { pityCount = drawn.some(card => rank(card.rarity) >= rank(pity.rarity)) ? 0 : pityCount + 1; store.set(`${storeKey}:pity`, pityCount); }
@@ -665,13 +825,13 @@
     }
     function reset() {
       const hadFocus = document.activeElement === action;
-      ++run; clearAnimations(); selected = -1; drawn = null; front = 0; makeTear(); applyTear();
+      ++run; clearAnimations(); selected = -1; drawn = null; front = 0; makeTear(); applyTear(); delete root.dataset.ring;
       root.style.setProperty('--glow', '#ffffff'); changeState('sealed');
       tray.setAttribute('aria-hidden', 'true'); tray.replaceChildren(); slots = []; cardButtons = [];
       pack.disabled = false; action.hidden = true; colorChoices.forEach(button => { button.disabled = false; });
       say(sealedText()); summary.textContent = ''; updatePity(); setLayout(packSize);
-      animate(floating, [{ transform: 'translateY(18px) rotateY(-35deg)', opacity: 0 }, { transform: 'translateY(0) rotateY(0deg)', opacity: 1 }], { duration: 420, easing: 'cubic-bezier(.2,.7,.2,1)' })
-        .then(() => { if (state === 'sealed') animations.forEach(animation => { if (animation.effect?.target === floating) animation.cancel(); }); });
+      setPackFace(null); if (packEyes) packEyes.style.transform = '';
+      enterPack();
       if (hadFocus) pack.focus({ preventScroll: true });
       save();
     }
@@ -729,7 +889,7 @@
       cardButtons.forEach((button, index) => { button.classList.toggle('is-selected', index === selected); button.setAttribute('aria-pressed', String(index === selected)); });
     }
 
-    chooseColor(config.packColor); setSound(soundOn); setLayout(packSize); updatePity(); say(sealedText()); measure();
+    chooseColor(config.packColor); setSound(soundOn); setLayout(packSize); updatePity(); say(sealedText()); measure(); enterPack(); scheduleBlinks();
     restore(window.openai?.widgetState);
     window.addEventListener('openai:set_globals', event => { if (event.detail?.globals?.widgetState) restore(event.detail.globals.widgetState); });
   })();

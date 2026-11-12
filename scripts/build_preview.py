@@ -198,7 +198,7 @@ def build(config_path: Path | None, output: Path, fragment: bool) -> None:
     encoded = json.dumps(config, ensure_ascii=False).replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
     content = (SKILL_ROOT / 'assets' / 'pack-opening.html').read_text(encoding='utf-8').replace('__PACK_CONFIG_JSON__', encoded)
     if not fragment:
-        content = '<!doctype html>\n<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>卡包抽卡</title><style>html,body{margin:0;min-height:100%;background:#edeee5}body{display:grid;place-items:center;min-height:100svh;padding:24px 0;box-sizing:border-box}</style></head><body>\n' + content + '\n</body></html>\n'
+        content = '<!doctype html>\n<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>卡包抽卡</title><style>html,body{margin:0;min-height:100%;background:#f6f6f2}body{display:grid;place-items:center;min-height:100svh;padding:24px 0;box-sizing:border-box}</style></head><body>\n' + content + '\n</body></html>\n'
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(content, encoding='utf-8')
     print(output.resolve())
