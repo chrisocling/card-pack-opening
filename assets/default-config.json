@@ -1,0 +1,16 @@
+{
+  "title": "holo",
+  "subtitle": "a little pack of wonder",
+  "packTitle": "holo",
+  "packSubtitle": "LITTLE WONDERS",
+  "series": "SERIES 001",
+  "packColor": "blue",
+  "speed": 1,
+  "cards": [
+    {"name":"Blip", "tagline":"Small friend. Big feelings.", "rarity":"common", "art":"orb", "color":"#ff987b"},
+    {"name":"Ringo", "tagline":"In a world of its own.", "rarity":"rare", "art":"planet", "color":"#6372f1"},
+    {"name":"Cubit", "tagline":"A little out of the box.", "rarity":"common", "art":"cube", "color":"#b7e75c"},
+    {"name":"Facet", "tagline":"Every side tells a story.", "rarity":"epic", "art":"gem", "color":"#a472df"},
+    {"name":"Nova", "tagline":"Born to make your day.", "rarity":"legendary", "art":"star", "color":"#f3d26c"}
+  ]
+}

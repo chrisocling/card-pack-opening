@@ -1,0 +1,294 @@
+<div id="holo-pack-opening" data-state="sealed" data-color="blue">
+  <style>
+    #holo-pack-opening{--foil:#233feb;--foil-deep:#111ea0;--cream:#f1f0e7;--ink:#343a33;--quiet:#777b70;--speed:1;width:100%;max-width:1040px;position:relative;font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);isolation:isolate;text-align:left}
+    #holo-pack-opening *{box-sizing:border-box}
+    #holo-pack-opening [hidden]{display:none!important}
+    #holo-pack-opening button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+    #holo-pack-opening button:focus-visible{outline:2px solid #5761b5;outline-offset:6px}
+    #holo-pack-opening .holo-stage{position:relative;width:100%;height:max(520px,calc(var(--rows,1)*250px + 190px));overflow:hidden;background:radial-gradient(ellipse at 48% 40%,#fbfaf3 0%,#f0f0e6 58%,#e5e6dc 100%)}
+    #holo-pack-opening .stage-grain{position:absolute;inset:0;pointer-events:none;opacity:.16;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%236b6c55' filter='url(%23n)' opacity='.22' d='M0 0h160v160H0z'/%3E%3C/svg%3E")}
+    #holo-pack-opening .ambient{position:absolute;inset:-15%;pointer-events:none;background:conic-gradient(from 34deg at 32% 40%,transparent 0deg,rgba(255,255,255,.21) 1deg,transparent 20deg 100deg,rgba(255,255,255,.2) 102deg,transparent 125deg);opacity:.6}
+    #holo-pack-opening .holo-header{position:absolute;top:25px;left:30px;right:30px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;z-index:6}
+    #holo-pack-opening .wordmark{font-size:25px;font-weight:700;letter-spacing:-1.3px;line-height:1}
+    #holo-pack-opening .brand-sub{font-size:10px;letter-spacing:1.5px;margin-top:8px;color:var(--quiet)}
+    #holo-pack-opening .pack-picker{display:flex;align-items:center;gap:7px}
+    #holo-pack-opening .color-choice{width:29px;height:29px;border:1px solid transparent;border-radius:50%;padding:7px;background:transparent;display:grid;place-items:center}
+    #holo-pack-opening .color-choice:before{content:"";display:block;width:13px;height:13px;border-radius:50%;background:var(--swatch);box-shadow:inset 0 1px 2px #ffffff70}
+    #holo-pack-opening .color-choice[aria-pressed="true"]{border-color:#a8aa9e}
+    #holo-pack-opening .color-choice:disabled{opacity:.5;cursor:default}
+    #holo-pack-opening[data-color="pink"]{--foil:#ed488f;--foil-deep:#ad205c}
+    #holo-pack-opening .floor-shadow{position:absolute;left:50%;top:76%;width:150px;height:16px;background:#797a6650;filter:blur(12px);border-radius:50%;transform:translateX(-50%);transition:opacity .5s}
+    #holo-pack-opening[data-state="opening"] .floor-shadow,#holo-pack-opening[data-state="revealed"] .floor-shadow{opacity:0}
+    #holo-pack-opening .pack-zone{position:absolute;left:50%;top:49%;transform:translate(-50%,-50%);width:164px;height:238px;perspective:850px;z-index:4;transition:opacity .2s}
+    #holo-pack-opening .pack-float{width:100%;height:100%;position:relative;animation:holo-idle 4.4s ease-in-out infinite;transform-style:preserve-3d}
+    #holo-pack-opening .pack-body{position:absolute;inset:0;display:block;width:100%;height:100%;padding:0;appearance:none;border:0;border-radius:3px;background:transparent;filter:drop-shadow(1px 10px 9px #45453528);touch-action:none;user-select:none;transform-style:preserve-3d}
+    #holo-pack-opening .foil-main{position:absolute;inset:10px 3px 9px;background:linear-gradient(98deg,#fff5 0%,transparent 8% 25%,#ffffff12 30%,transparent 40% 75%,#0002 92%,#fff3 97%),linear-gradient(170deg,var(--foil),var(--foil) 38%,var(--foil-deep) 100%);box-shadow:inset 2px 0 2px #ffffff68,inset -3px 0 3px #0004,inset 0 2px 2px #fff4;overflow:hidden;clip-path:polygon(0 0,100% 0,98% 19%,100% 40%,98.5% 61%,100% 100%,0 100%,1.5% 74%,0 48%,1% 23%)}
+    #holo-pack-opening .foil-main:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(125deg,transparent 32%,#ffffff16 38%,transparent 41% 54%,#7eefff1a 60%,transparent 65%);mix-blend-mode:screen}
+    #holo-pack-opening .pack-crease{position:absolute;left:6px;right:6px;bottom:13px;height:8px;border-bottom:1px solid #fff4;border-top:1px solid #0002;opacity:.5}
+    #holo-pack-opening .pack-title{position:absolute;left:14px;top:21px;font-weight:700;font-size:21px;letter-spacing:-1.2px;color:#fff;z-index:1}
+    #holo-pack-opening .pack-emblem{position:absolute;width:126px;height:136px;left:17px;top:50px;filter:drop-shadow(1px 6px 3px #020a6d55)}
+    #holo-pack-opening .pack-caption{position:absolute;left:0;right:0;bottom:22px;text-align:center;color:#ffffffc4;font-size:8px;letter-spacing:2px}
+    #holo-pack-opening .pack-series{position:absolute;left:0;right:0;bottom:10px;text-align:center;color:#ffffff7d;font-size:5.5px;letter-spacing:1px}
+    #holo-pack-opening .pack-seal{position:absolute;left:0;right:0;height:15px;background:repeating-linear-gradient(90deg,#ffffff12 0 1px,transparent 1px 3px),linear-gradient(180deg,var(--foil),var(--foil-deep));box-shadow:inset 0 3px 2px #ffffff42,inset 0 -2px 2px #0002;clip-path:polygon(0 9%,4% 1%,8% 8%,12% 0,16% 8%,20% 0,24% 8%,28% 0,32% 8%,36% 0,40% 8%,44% 0,48% 8%,52% 0,56% 8%,60% 0,64% 8%,68% 0,72% 8%,76% 0,80% 8%,84% 0,88% 8%,92% 0,96% 8%,100% 0,100% 94%,0 100%)}
+    #holo-pack-opening .seal-top{top:0;z-index:5;transform-origin:10% 70%;will-change:transform}
+    #holo-pack-opening .seal-bottom{bottom:0;transform:rotate(180deg)}
+    #holo-pack-opening .tear-mark{position:absolute;left:0;right:0;top:14px;border-top:1px dashed #ffffff75;opacity:0;transition:opacity .3s}
+    #holo-pack-opening .pack-body:hover .tear-mark{opacity:1}
+    #holo-pack-opening .silver-lining{position:absolute;left:3px;right:3px;top:8px;height:10px;background:linear-gradient(180deg,#9c9fa0,#f8f9f4 40%,#707785 52%,#d8dcd7 85%);border-radius:50%;opacity:0}
+    #holo-pack-opening[data-state="opening"] .silver-lining{opacity:1}
+    #holo-pack-opening .custom-pack-image{width:100%;height:100%;object-fit:cover}
+    #holo-pack-opening .rip-hint{position:absolute;top:calc(49% + 143px);width:100%;text-align:center;font-size:11px;letter-spacing:1.5px;color:#808478;pointer-events:none;transition:opacity .25s}
+    #holo-pack-opening .rip-hint span{display:inline-block;margin-left:5px;animation:holo-hint 2s ease-in-out infinite}
+    #holo-pack-opening .rainbow{position:absolute;width:500px;height:310px;left:50%;top:42%;transform:translate(-50%,-100%);overflow:visible;pointer-events:none;z-index:2;opacity:0;transform-origin:50% 100%;filter:drop-shadow(0 0 6px #fff5)}
+    #holo-pack-opening .cards-tray{position:absolute;left:7.5%;right:7.5%;top:49%;transform:translateY(-50%);display:flex;flex-wrap:wrap;gap:18px 12px;align-items:center;justify-content:center;perspective:1400px;z-index:3;pointer-events:none}
+    #holo-pack-opening .card-slot{width:calc((100% - 48px)/5);max-width:153px;flex:0 1 calc((100% - 48px)/5);aspect-ratio:0.68;position:relative;opacity:0;transform-style:preserve-3d}
+    #holo-pack-opening .card-button{position:relative;width:100%;height:100%;display:block;border:0;padding:0;background:transparent;text-align:left;transform:rotate(var(--rest,0deg));transition:transform .3s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d;isolation:isolate;outline-offset:5px}
+    #holo-pack-opening .card-button:hover,#holo-pack-opening .card-button:focus-visible,#holo-pack-opening .card-button.is-selected{transform:translateY(-18px) rotate(0deg) scale(1.07);z-index:6}
+    #holo-pack-opening .card-surface{position:absolute;inset:0;overflow:hidden;border-radius:5px;background:linear-gradient(145deg,#ffffff91,transparent 65%),var(--tone);color:#28362c;box-shadow:0 4px 5px #393e3525,0 15px 20px -12px #303a345c,inset 0 0 0 1px #ffffffaa;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .18s ease-out;backface-visibility:hidden}
+    #holo-pack-opening .rarity-rare .card-surface{background:radial-gradient(ellipse at 20% 10%,#6c8ff8,transparent 47%),linear-gradient(120deg,#0c4158,#4331a1 48%,#262258 72%,#174d4d);color:#f5f5e6}
+    #holo-pack-opening .rarity-epic .card-surface{background:radial-gradient(ellipse at 70% 10%,#9859ca,transparent 47%),linear-gradient(120deg,#354b76,#331c5d 50%,#21354c 76%,#2f6365);color:#f5f5e6}
+    #holo-pack-opening .rarity-legendary .card-surface{background:repeating-conic-gradient(from -20deg at 50% 33%,#f9ec40 0deg 11deg,#ff81a2 11deg 23deg);color:#493322}
+    #holo-pack-opening .rarity-legendary .card-surface:before{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(180deg,transparent,#ffe8b4 65%)}
+    #holo-pack-opening .card-grid{position:absolute;inset:0;opacity:.12;background:linear-gradient(#fff5 1px,transparent 1px),linear-gradient(90deg,#fff5 1px,transparent 1px);background-size:15px 15px;mask-image:linear-gradient(#000,transparent 85%)}
+    #holo-pack-opening .holo-overlay{position:absolute;inset:-70%;pointer-events:none;opacity:.26;mix-blend-mode:screen;background:linear-gradient(112deg,transparent 25%,#b1f2d8 33%,#e6c1ff 38%,#f7a2ae 43%,#ffed9c 48%,#aef6fa 52%,transparent 61%);transform:translateX(var(--shine,0%));transition:transform .2s}
+    #holo-pack-opening .card-button:hover .holo-overlay,#holo-pack-opening .card-button.is-selected .holo-overlay{opacity:.55}
+    #holo-pack-opening .card-number{position:absolute;top:10px;left:10px;font-size:6px;letter-spacing:1.3px;opacity:.65;z-index:1}
+    #holo-pack-opening .card-art{position:absolute;left:3%;right:3%;top:9%;height:61%;display:grid;place-items:center;filter:drop-shadow(0 10px 5px #23392725)}
+    #holo-pack-opening .card-art svg{display:block;width:100%;height:100%;overflow:visible}
+    #holo-pack-opening .card-art img{width:100%;height:100%;object-fit:contain;border-radius:3px}
+    #holo-pack-opening .card-copy{position:absolute;left:10px;right:8px;top:71%;z-index:1}
+    #holo-pack-opening .card-name{font-size:13px;font-weight:700;letter-spacing:-.35px;overflow-wrap:anywhere;line-height:1.05}
+    #holo-pack-opening .card-tagline{margin-top:4px;font-size:6px;line-height:1.35;opacity:.7;overflow-wrap:anywhere}
+    #holo-pack-opening .card-bottom{position:absolute;bottom:9px;left:10px;right:9px;display:flex;justify-content:space-between;align-items:center;font-size:5px;letter-spacing:.7px;opacity:.7;gap:3px}
+    #holo-pack-opening .card-symbol{font-size:9px;line-height:1}
+    #holo-pack-opening .pack-controls{position:absolute;left:16px;right:16px;bottom:30px;display:flex;flex-direction:column;align-items:center;gap:12px;z-index:8}
+    #holo-pack-opening .open-action{border:1px solid #dcdfd3;background:#fffef4e8;color:#454b40;border-radius:5px;padding:10px 18px;font-size:11px;letter-spacing:.2px;box-shadow:0 2px 3px #60644312;transition:background .2s,transform .2s,opacity .2s;min-height:37px}
+    #holo-pack-opening .open-action:hover{background:#fff;transform:translateY(-1px)}
+    #holo-pack-opening .open-action:disabled{cursor:default;opacity:.55;transform:none}
+    #holo-pack-opening .status-line{font-size:10px;letter-spacing:.75px;min-height:15px;color:var(--quiet);text-align:center}
+    #holo-pack-opening .confetti{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:7}
+    #holo-pack-opening .sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    #holo-pack-opening[data-state="opening"] .pack-float{animation:none}
+    #holo-pack-opening[data-state="opening"] .rip-hint,#holo-pack-opening[data-state="revealed"] .rip-hint{opacity:0}
+    #holo-pack-opening[data-state="revealed"] .pack-zone{visibility:hidden}
+    #holo-pack-opening[data-state="revealed"] .cards-tray{pointer-events:auto}
+    #holo-pack-opening .card-slot:hover,#holo-pack-opening .card-slot:focus-within{z-index:10}
+    @keyframes holo-idle{0%,100%{transform:translateY(0) rotate(-2deg) rotateY(-5deg)}50%{transform:translateY(-9px) rotate(1.2deg) rotateY(4deg)}}
+    @keyframes holo-hint{0%,100%{transform:translateX(0);opacity:.5}50%{transform:translateX(5px);opacity:1}}
+    @media(min-width:900px){#holo-pack-opening .holo-stage{height:max(570px,calc(var(--rows,1)*250px + 190px))}#holo-pack-opening .pack-zone{width:180px;height:261px}#holo-pack-opening .pack-emblem{width:138px;height:149px;left:19px;top:56px}#holo-pack-opening .rip-hint{top:calc(49% + 158px)}#holo-pack-opening .pack-title{font-size:23px}}
+    @media(max-width:620px){#holo-pack-opening .holo-stage{height:max(470px,calc(var(--rows,1)*180px + 190px))}#holo-pack-opening .holo-header{left:22px;right:22px;top:21px}#holo-pack-opening .cards-tray{left:5%;right:5%;gap:8px}#holo-pack-opening .card-slot{width:calc((100% - 32px)/5);flex-basis:calc((100% - 32px)/5)}#holo-pack-opening .card-copy{left:6px;right:5px}#holo-pack-opening .card-name{font-size:10px}#holo-pack-opening .card-tagline{font-size:5px;margin-top:3px}#holo-pack-opening .card-number{left:6px;top:6px;font-size:4.5px}#holo-pack-opening .card-bottom{left:6px;right:5px;bottom:6px;font-size:4px}#holo-pack-opening .card-symbol{font-size:6px}}
+    @media(max-width:440px){#holo-pack-opening .holo-stage{height:max(540px,calc(var(--mobile-rows,2)*150px + 220px))}#holo-pack-opening .cards-tray{flex-wrap:wrap;gap:13px 12px;top:48%;left:10%;right:10%}#holo-pack-opening .card-slot{width:calc((100% - 24px)/3);max-width:100px;flex:none}#holo-pack-opening .card-name{font-size:11px}#holo-pack-opening .card-tagline{font-size:5.5px}#holo-pack-opening .card-bottom{font-size:4.5px}#holo-pack-opening .card-number{font-size:5px}#holo-pack-opening .card-button:hover,#holo-pack-opening .card-button:focus-visible,#holo-pack-opening .card-button.is-selected{transform:translateY(-8px) rotate(0deg) scale(1.05)}#holo-pack-opening .brand-sub{font-size:8px;letter-spacing:1px}#holo-pack-opening .pack-controls{bottom:24px}#holo-pack-opening .rainbow{width:360px}}
+    @media(prefers-reduced-motion:reduce){#holo-pack-opening .pack-float,#holo-pack-opening .rip-hint span{animation:none}#holo-pack-opening *,#holo-pack-opening *:before,#holo-pack-opening *:after{transition:none!important}}
+  </style>
+  <section class="holo-stage" aria-label="卡包拆封与抽卡动画">
+    <div class="ambient" aria-hidden="true"></div><div class="stage-grain" aria-hidden="true"></div>
+    <header class="holo-header">
+      <div><div class="wordmark"></div><div class="brand-sub"></div></div>
+      <div class="pack-picker" role="group" aria-label="卡包颜色">
+        <button type="button" class="color-choice" data-color="blue" style="--swatch:#3449e9" aria-label="蓝色卡包" aria-pressed="true"></button>
+        <button type="button" class="color-choice" data-color="pink" style="--swatch:#e94a93" aria-label="粉色卡包" aria-pressed="false"></button>
+      </div>
+    </header>
+    <div class="floor-shadow" aria-hidden="true"></div>
+    <svg class="rainbow" viewBox="0 0 460 310" aria-hidden="true"><g class="ribbon-paths" fill="none" stroke-linecap="round"></g></svg>
+    <div class="pack-zone"><div class="pack-float">
+      <button class="pack-body" type="button" aria-label="拆开卡包，可以向右拖动或点击">
+        <div class="silver-lining"></div>
+        <div class="foil-main"><div class="pack-title"></div>
+          <svg class="pack-emblem" viewBox="0 0 160 160" aria-hidden="true">
+            <defs>
+              <linearGradient id="holo-metal" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#fffce8"/><stop offset=".2" stop-color="#def9c6"/><stop offset=".37" stop-color="#869dd4"/><stop offset=".5" stop-color="#f8e6fd"/><stop offset=".69" stop-color="#7ebbb9"/><stop offset=".83" stop-color="#e7edff"/><stop offset="1" stop-color="#a09dcc"/></linearGradient>
+              <linearGradient id="holo-shard" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#effaff"/><stop offset=".4" stop-color="#9cafc0"/><stop offset="1" stop-color="#3e5c85"/></linearGradient>
+            </defs>
+            <path d="M80 9 Q89 61 147 80 Q94 90 80 150 Q66 95 13 80 Q66 63 80 9Z" fill="url(#holo-metal)" stroke="#e8f5e8" stroke-width="1.3"/>
+            <path d="M80 9 81 79 147 80 90 87 80 150 73 89 13 80 72 73Z" fill="url(#holo-shard)" opacity=".68"/>
+            <path d="M80 9 73 73 13 80 65 64Z" fill="#ffffeb" opacity=".85"/><path d="M81 79 80 150 90 87 147 80Z" fill="#6f73ac" opacity=".5"/>
+            <ellipse cx="68" cy="83" rx="3.4" ry="4.9" fill="#293849"/><ellipse cx="91" cy="83" rx="3.4" ry="4.9" fill="#293849"/>
+            <ellipse cx="61" cy="91" rx="5" ry="2.5" fill="#ef9abb" opacity=".6"/><ellipse cx="99" cy="91" rx="5" ry="2.5" fill="#ef9abb" opacity=".6"/>
+            <path d="M75 94 Q80 98 85 94" fill="none" stroke="#526074" stroke-width="1.7" stroke-linecap="round"/>
+          </svg>
+          <div class="pack-caption"></div><div class="pack-series"></div><div class="pack-crease"></div>
+        </div>
+        <div class="pack-seal seal-bottom"></div><div class="pack-seal seal-top"></div><div class="tear-mark"></div>
+      </button>
+    </div></div>
+    <div class="rip-hint">向右撕开<span aria-hidden="true">⟶</span></div>
+    <div class="cards-tray" role="group" aria-label="本包卡片" aria-hidden="true"></div>
+    <canvas class="confetti" aria-hidden="true"></canvas>
+    <div class="pack-controls"><button class="open-action" type="button">拆开卡包</button><div class="status-line" aria-live="polite">5 张小小惊喜，等你拆开</div></div>
+    <p class="sr-only result-summary" aria-live="polite"></p>
+  </section>
+  <script type="application/json" class="pack-configuration">__PACK_CONFIG_JSON__</script>
+  <script>
+  (() => {
+    const root = document.getElementById('holo-pack-opening');
+    if (!root || root.dataset.ready) return;
+    root.dataset.ready = 'true';
+    const config = JSON.parse(root.querySelector('.pack-configuration').textContent);
+    const $ = s => root.querySelector(s);
+    const stage = $('.holo-stage'), pack = $('.pack-body'), floating = $('.pack-float'), seal = $('.seal-top');
+    const tray = $('.cards-tray'), action = $('.open-action'), status = $('.status-line'), rainbow = $('.rainbow');
+    const canvas = $('.confetti'), context = canvas.getContext('2d');
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+    const speed = Number.isFinite(config.speed) ? Math.max(.5, Math.min(2, config.speed)) : 1;
+    const cards = config.cards;
+    root.style.setProperty('--rows', Math.ceil(cards.length / 5));
+    root.style.setProperty('--mobile-rows', Math.ceil(cards.length / 3));
+    const ms = value => reduced.matches ? Math.min(80, value / speed) : value / speed;
+    let state = 'sealed', run = 0, selected = -1, drag = null, suppressClick = false, particles = [], raf = 0;
+    let animations = [];
+    const setText = (s, value) => { $(s).textContent = value || ''; };
+    setText('.wordmark', config.title); setText('.brand-sub', config.subtitle);
+    setText('.pack-title', config.packTitle); setText('.pack-caption', config.packSubtitle); setText('.pack-series', config.series);
+    if (config.packImage) {
+      const image = document.createElement('img'); image.src = config.packImage; image.className = 'custom-pack-image'; image.alt = '';
+      $('.foil-main').replaceChildren(image);
+    }
+    const palette = ['#ff7790','#ffb952','#ecdb4f','#9fd960','#5bd9b3','#5ed4eb','#7f80f1','#c67eea'];
+    const NS = 'http://www.w3.org/2000/svg';
+    palette.forEach((color, index) => {
+      const path = document.createElementNS(NS, 'path');
+      const x = 197 + index * 9;
+      path.setAttribute('d', `M${x} 305 C${x+24} 244 ${x-66} 223 ${x-49} 166 S${x-112} 103 ${x-94} 51 S${x-157} 0 ${x-143} -30`);
+      path.setAttribute('stroke', color); path.setAttribute('stroke-width', '10'); $('.ribbon-paths').append(path);
+    });
+    const safeArt = (kind, index) => {
+      const key = `holo-art-${index}`;
+      const defs = `<defs><radialGradient id="${key}-gloss" cx=".3" cy=".22" r=".85"><stop stop-color="#fff6d1"/><stop offset=".18" stop-color="#ffb79b"/><stop offset=".65" stop-color="#fb765d"/><stop offset="1" stop-color="#b94d43"/></radialGradient><radialGradient id="${key}-blue" cx=".3" cy=".2" r=".9"><stop stop-color="#a9f5fb"/><stop offset=".3" stop-color="#779ef5"/><stop offset=".68" stop-color="#5564c5"/><stop offset="1" stop-color="#384c9b"/></radialGradient><linearGradient id="${key}-lime" x1="0" x2=".8" y1="0" y2="1"><stop stop-color="#fcffa5"/><stop offset=".3" stop-color="#e1f73f"/><stop offset="1" stop-color="#a1c224"/></linearGradient><linearGradient id="${key}-gold" x1=".2" x2=".9" y1="0" y2="1"><stop stop-color="#fffad0"/><stop offset=".35" stop-color="#f8ec53"/><stop offset=".75" stop-color="#e6b22d"/><stop offset="1" stop-color="#b57b25"/></linearGradient><radialGradient id="${key}-purple" cx=".25" cy=".2" r="1"><stop stop-color="#dac2f6"/><stop offset=".4" stop-color="#a36ed5"/><stop offset="1" stop-color="#493379"/></radialGradient></defs>`;
+      const face = (x, y, spacing=22) => `<ellipse cx="${x-spacing/2}" cy="${y}" rx="4" ry="6.5" fill="#29343d"/><ellipse cx="${x+spacing/2}" cy="${y}" rx="4" ry="6.5" fill="#29343d"/><ellipse cx="${x-spacing/2-1}" cy="${y-2}" rx="1.1" ry="1.8" fill="#fff" opacity=".8"/><ellipse cx="${x+spacing/2-1}" cy="${y-2}" rx="1.1" ry="1.8" fill="#fff" opacity=".8"/><ellipse cx="${x-22}" cy="${y+10}" rx="7" ry="3.8" fill="#ed7b87" opacity=".55"/><ellipse cx="${x+22}" cy="${y+10}" rx="7" ry="3.8" fill="#ed7b87" opacity=".55"/><path d="M${x-4} ${y+13} Q${x} ${y+17} ${x+4} ${y+13}" fill="none" stroke="#584349" stroke-width="2" stroke-linecap="round"/>`;
+      let body;
+      if (kind === 'planet') body = `<ellipse cx="100" cy="91" rx="82" ry="25" transform="rotate(-18 100 91)" fill="none" stroke="#e9ef9e" stroke-width="8"/><circle cx="100" cy="82" r="46" fill="url(#${key}-blue)"/><ellipse cx="83" cy="57" rx="17" ry="10" transform="rotate(-25 83 57)" fill="#fff" opacity=".35"/>${face(100,85)}<path d="M23 109 C49 131 158 103 179 68" fill="none" stroke="#f9f3b0" stroke-width="7" stroke-linecap="round"/><circle cx="162" cy="37" r="3" fill="#efffc4"/><circle cx="35" cy="47" r="2" fill="#b6e3f0"/>`;
+      else if (kind === 'cube') body = `<g transform="rotate(-8 100 87)"><path d="M53 39 137 34 151 49 146 130 132 142 52 136 41 120 41 55Z" fill="#96b727"/><path d="M53 39 137 34 151 49 64 54 41 55Z" fill="#fbffa0"/><path d="M137 34 151 49 146 130 132 142 135 56Z" fill="#a5c22c"/><rect x="43" y="43" width="92" height="96" rx="19" fill="url(#${key}-lime)"/><path d="M55 51 Q78 42 103 48" stroke="#ffffdf" stroke-width="6" opacity=".5" stroke-linecap="round" fill="none"/>${face(88,91,26)}</g>`;
+      else if (kind === 'gem') body = `<path d="M65 30 111 23 145 52 151 101 120 139 72 145 42 110 40 63Z" fill="url(#${key}-purple)"/><path d="M65 30 79 69 40 63Z" fill="#e0bcf3"/><path d="M65 30 111 23 79 69Z" fill="#b885df"/><path d="M111 23 145 52 120 76 79 69Z" fill="#895bb8"/><path d="M145 52 151 101 120 76Z" fill="#684298"/><path d="M40 63 79 69 62 112 42 110Z" fill="#8255ac"/><path d="M79 69 120 76 120 119 62 112Z" fill="#9b70c3"/><path d="M151 101 120 139 120 119 120 76Z" fill="#59347e"/><path d="M62 112 120 119 120 139 72 145Z" fill="#694895"/><path d="M65 30 79 69 40 63M79 69 111 23M79 69 120 76 145 52M120 76 120 119 151 101M120 119 62 112 42 110" stroke="#e9c4fc" stroke-width="1" opacity=".4" fill="none"/>${face(94,92,24)}<path d="m150 31 2 7 7 2-7 2-2 7-2-7-7-2 7-2Z" fill="#e2d0ff"/>`;
+      else if (kind === 'star') body = `<path d="M104 19 Q108 17 112 29 L126 58 161 61 Q174 62 163 74 L137 99 144 135 Q147 149 134 142 L101 125 68 144 Q55 151 58 137 L64 101 38 77 Q26 65 41 63 L77 57 94 25 Q99 15 104 19Z" fill="#ae7e28" transform="translate(2 5)"/><path d="M104 16 Q108 14 112 26 L126 55 161 58 Q174 59 163 71 L137 96 144 132 Q147 146 134 139 L101 122 68 141 Q55 148 58 134 L64 98 38 74 Q26 62 41 60 L77 54 94 22 Q99 12 104 16Z" fill="url(#${key}-gold)"/><path d="M99 26 85 66 46 67" stroke="#ffffd9" stroke-width="5" stroke-linecap="round" fill="none" opacity=".7"/>${face(101,85,26)}<path d="m154 20 2 8 8 2-8 2-2 8-2-8-8-2 8-2Z" fill="#fff9cf"/>`;
+      else body = `<path d="M47 95 C41 66 60 36 87 33 C116 24 144 45 148 72 C159 103 139 132 113 137 C83 150 49 133 47 107Z" fill="url(#${key}-gloss)"/><ellipse cx="77" cy="56" rx="20" ry="10" transform="rotate(-24 77 56)" fill="#fff" opacity=".48"/><ellipse cx="58" cy="92" rx="3" ry="14" fill="#ffdec5" opacity=".45"/>${face(102,89,27)}`;
+      return `<svg viewBox="0 0 200 170" aria-hidden="true">${defs}<ellipse cx="100" cy="150" rx="43" ry="5" fill="#263c3b" opacity=".09"/>${body}</svg>`;
+    };
+    const rarities = {common:'COMMON',rare:'RARE',epic:'EPIC',legendary:'LEGENDARY'};
+    const rotations = [-3,1.5,-1.5,2,-2];
+    cards.forEach((card, index) => {
+      const rarity = Object.hasOwn(rarities, card.rarity) ? card.rarity : 'common';
+      const slot = document.createElement('div'); slot.className = `card-slot rarity-${rarity}`;
+      slot.style.setProperty('--rest', `${rotations[index % rotations.length]}deg`);
+      slot.style.setProperty('--tone', CSS.supports('color', card.color || '') ? card.color : '#c9dfa5');
+      const button = document.createElement('button'); button.type = 'button'; button.className = 'card-button'; button.disabled = true;
+      button.setAttribute('aria-label', `${card.name}，${rarities[rarity]}，点击选中`); button.setAttribute('aria-pressed','false');
+      const surface = document.createElement('div'); surface.className = 'card-surface';
+      const grid = document.createElement('div'); grid.className='card-grid';
+      const number = document.createElement('div'); number.className='card-number'; number.textContent=`LITTLE WONDERS · ${String(index+1).padStart(2,'0')}`;
+      const art = document.createElement('div'); art.className='card-art';
+      if (card.image) { const img=document.createElement('img'); img.src=card.image; img.alt=''; art.append(img); }
+      else art.innerHTML=safeArt(card.art,index);
+      const copy = document.createElement('div'); copy.className='card-copy';
+      const name = document.createElement('div'); name.className='card-name'; name.textContent=card.name;
+      const tagline = document.createElement('div'); tagline.className='card-tagline'; tagline.textContent=card.tagline||''; copy.append(name,tagline);
+      const bottom = document.createElement('div'); bottom.className='card-bottom';
+      const rarityText=document.createElement('span'); rarityText.textContent=rarities[rarity];
+      const symbol=document.createElement('span'); symbol.className='card-symbol'; symbol.textContent=rarity==='legendary'?'✦ ✦ ✦':rarity==='epic'?'◇ ◇':rarity==='rare'?'◇':'○'; bottom.append(rarityText,symbol);
+      const shine=document.createElement('div'); shine.className='holo-overlay';
+      surface.append(grid,number,art,copy,bottom,shine); button.append(surface); slot.append(button); tray.append(slot);
+      button.addEventListener('pointermove', event => {
+        if (state!=='revealed' || reduced.matches || event.pointerType==='touch') return;
+        const box=button.getBoundingClientRect(); const px=(event.clientX-box.left)/box.width-.5; const py=(event.clientY-box.top)/box.height-.5;
+        surface.style.setProperty('--rx',`${-py*15}deg`); surface.style.setProperty('--ry',`${px*20}deg`); surface.style.setProperty('--shine',`${px*20}%`);
+      });
+      button.addEventListener('pointerleave',()=>{surface.style.setProperty('--rx','0deg');surface.style.setProperty('--ry','0deg');surface.style.setProperty('--shine','0%');});
+      button.addEventListener('click',()=>{
+        if(state!=='revealed')return;
+        selected=selected===index?-1:index;
+        root.querySelectorAll('.card-button').forEach((node,i)=>{node.classList.toggle('is-selected',i===selected);node.setAttribute('aria-pressed',String(i===selected));});
+        status.textContent=selected<0?'本包已收集 · 轻触卡片，看看它的光':`${card.name} · ${rarities[rarity]}`;
+        save();
+      });
+    });
+    const slots=[...root.querySelectorAll('.card-slot')];
+    const cardButtons=[...root.querySelectorAll('.card-button')];
+    const colorChoices=[...root.querySelectorAll('.color-choice')];
+    function chooseColor(color){
+      root.dataset.color=color==='pink'?'pink':'blue';
+      colorChoices.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.color===root.dataset.color)));
+    }
+    chooseColor(config.packColor);
+    colorChoices.forEach(button=>button.addEventListener('click',()=>{if(state==='opening')return;chooseColor(button.dataset.color);if(state==='revealed')reset(false);save();}));
+    function changeState(next){state=next;root.dataset.state=next;}
+    function animate(element, frames, options){
+      const animation=element.animate(frames,{...options,duration:ms(options.duration),delay:ms(options.delay||0),fill:'forwards'});animations.push(animation);return animation.finished.catch(()=>{});
+    }
+    function clearAnimations(){animations.forEach(animation=>animation.cancel());animations=[];cancelAnimationFrame(raf);particles=[];if(context)context.clearRect(0,0,canvas.width,canvas.height);}
+    function resizeCanvas(){const box=stage.getBoundingClientRect(),ratio=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(box.width*ratio);canvas.height=Math.round(box.height*ratio);if(context)context.setTransform(ratio,0,0,ratio,0,0);}
+    new ResizeObserver(resizeCanvas).observe(stage); resizeCanvas();
+    function confetti(){
+      if(reduced.matches||!context)return;
+      const width=stage.clientWidth,height=stage.clientHeight;
+      particles=Array.from({length:80},(_,i)=>({x:width/2,y:height*.28,vx:(Math.random()-.5)*7,vy:-Math.random()*6-1,spin:Math.random()*6,size:Math.random()*3+2,color:palette[i%palette.length],life:1}));
+      let last=performance.now(),elapsed=0;
+      const draw=now=>{
+        const dt=Math.min((now-last)/16.67,2.5);last=now;elapsed+=dt*16.67;
+        context.clearRect(0,0,width,height);
+        particles.forEach(p=>{p.vy+=.055*dt;p.x+=p.vx*dt;p.y+=p.vy*dt;p.vx*=.995;p.spin+=.065*dt;
+          context.save();context.translate(p.x,p.y);context.rotate(p.spin);context.globalAlpha=Math.min(1,Math.max(0,(3000/speed-elapsed)/600));context.fillStyle=p.color;context.fillRect(-p.size/2,-p.size/2,p.size,p.size*.6*Math.cos(p.spin));context.restore();});
+        if(elapsed<3000/speed)raf=requestAnimationFrame(draw);else context.clearRect(0,0,width,height);
+      };raf=requestAnimationFrame(draw);
+    }
+    async function openPack(){
+      if(state!=='sealed')return;
+      const current=++run;clearAnimations();seal.style.transform='';changeState('opening');
+      pack.disabled=true;action.disabled=true;action.textContent='惊喜正在出场…';status.textContent='撕开一点，快乐多一点';
+      colorChoices.forEach(button=>button.disabled=true);
+      await animate(floating,[{transform:'rotate(-2deg) scale(1)'},{transform:'rotate(1.5deg) scale(.97)',offset:.4},{transform:'rotate(-1deg) scale(1.02)'}],{duration:240,easing:'ease-in-out'});
+      if(current!==run)return;
+      animate(seal,[{transform:'translate(0,0) rotate(0)',opacity:1},{transform:'translate(90px,-15px) rotate(22deg)',offset:.45},{transform:'translate(240px,110px) rotate(120deg)',opacity:0}],{duration:610,easing:'cubic-bezier(.3,.05,.65,1)'});
+      animate(rainbow,[{transform:'translate(-50%,-55%) scale(.26,.05)',opacity:0},{transform:'translate(-50%,-84%) scale(.75,.9)',opacity:1,offset:.36},{transform:'translate(-50%,-110%) scale(1.15,1.2)',opacity:.9,offset:.72},{transform:'translate(-50%,-140%) scale(1.3,1.3)',opacity:0}],{duration:1100,easing:'cubic-bezier(.2,.7,.25,1)'});
+      const stageBox=stage.getBoundingClientRect();
+      const flights=slots.map((slot,index)=>{
+        const box=slot.getBoundingClientRect();const dx=stageBox.left+stageBox.width/2-(box.left+box.width/2);const dy=stageBox.top+stageBox.height*.44-(box.top+box.height/2);
+        const fan=(index-(cards.length-1)/2)*9;
+        return animate(slot,[{transform:`translate(${dx}px,${dy+40}px) rotate(${fan}deg) scale(.72)`,opacity:0},{transform:`translate(${dx+fan*1.4}px,${dy-104}px) rotate(${fan*1.4}deg) scale(.86)`,opacity:1,offset:.38},{transform:`translate(${-dx*.04}px,-13px) rotate(0) scale(1.015)`,opacity:1,offset:.83},{transform:'translate(0,0) rotate(0) scale(1)',opacity:1}],{duration:1510,delay:210+index*45,easing:'cubic-bezier(.2,.62,.25,1)'});
+      });
+      animate(floating,[{transform:'translateY(0) rotate(-1deg)',opacity:1},{transform:'translateY(18px) rotate(2deg)',opacity:1,offset:.28},{transform:'translateY(450px) rotate(22deg)',opacity:0}],{duration:950,delay:390,easing:'cubic-bezier(.55,.05,.8,.6)'});
+      confetti();await Promise.all(flights);
+      if(current!==run)return;
+      changeState('revealed');tray.setAttribute('aria-hidden','false');cardButtons.forEach(button=>button.disabled=false);
+      action.disabled=false;action.textContent='再开一包  ↗';colorChoices.forEach(button=>button.disabled=false);
+      status.textContent=`${cards.length} 张小小惊喜，全部收好`;
+      setText('.result-summary',`本包卡片：${cards.map(card=>card.name).join('、')}。可以选择卡片，或再开一包。`);
+      save();
+    }
+    function reset(alternate=false){
+      ++run;clearAnimations();selected=-1;
+      if(alternate)chooseColor(root.dataset.color==='blue'?'pink':'blue');
+      changeState('sealed');tray.setAttribute('aria-hidden','true');pack.disabled=false;action.disabled=false;
+      slots.forEach(slot=>{slot.style.opacity='';});
+      cardButtons.forEach(button=>{button.disabled=true;button.classList.remove('is-selected');button.setAttribute('aria-pressed','false');const surface=button.querySelector('.card-surface');surface.style.setProperty('--rx','0deg');surface.style.setProperty('--ry','0deg');});
+      colorChoices.forEach(button=>button.disabled=false);seal.style.transform='';action.textContent='拆开卡包';
+      status.textContent=`${cards.length} 张小小惊喜，等你拆开`;setText('.result-summary','');
+      animate(floating,[{transform:'translateY(18px) rotateY(-35deg)',opacity:0},{transform:'translateY(0) rotateY(0deg)',opacity:1}],{duration:420,easing:'cubic-bezier(.2,.7,.2,1)'}).then(()=>{if(state==='sealed'){animations.forEach(animation=>{if(animation.effect?.target===floating)animation.cancel();});}});
+      save();
+    }
+    pack.addEventListener('pointerdown',event=>{if(state!=='sealed'||(event.pointerType==='mouse'&&event.button!==0))return;drag={id:event.pointerId,x:event.clientX,y:event.clientY,dx:0,dy:0};pack.setPointerCapture(event.pointerId);});
+    pack.addEventListener('pointermove',event=>{if(!drag||drag.id!==event.pointerId)return;drag.dx=event.clientX-drag.x;drag.dy=event.clientY-drag.y;const amount=Math.max(0,Math.min(70,drag.dx));seal.style.transform=`translate(${amount*.55}px,${-amount*.08}px) rotate(${amount*.1}deg)`;});
+    pack.addEventListener('pointerup',event=>{if(!drag||drag.id!==event.pointerId)return;const value=drag;drag=null;seal.style.transform='';const moved=Math.hypot(value.dx,value.dy);suppressClick=moved>8;if(value.dx>36&&Math.abs(value.dy)<80)openPack();});
+    pack.addEventListener('pointercancel',()=>{drag=null;seal.style.transform='';suppressClick=true;});
+    pack.addEventListener('click',event=>{if(suppressClick&&event.detail!==0){suppressClick=false;return;}suppressClick=false;openPack();});
+    action.addEventListener('click',()=>{if(state==='sealed')openPack();else if(state==='revealed')reset();});
+    function save(){
+      if(!window.openai?.setWidgetState)return;
+      window.openai.setWidgetState({modelContent:{cardPack:{phase:state,color:root.dataset.color,cards:cards.map(card=>card.name),selectedCard:selected<0?null:cards[selected].name}},privateContent:{color:root.dataset.color,revealed:state==='revealed',selected}}).catch(()=>{});
+    }
+    function restore(value){
+      if(!value?.privateContent||state==='opening')return;
+      const saved=value.privateContent;chooseColor(saved.color||config.packColor);
+      if(saved.revealed){
+        ++run;clearAnimations();changeState('revealed');tray.setAttribute('aria-hidden','false');
+        slots.forEach(slot=>slot.style.opacity='1');cardButtons.forEach(button=>button.disabled=false);pack.disabled=true;
+        action.textContent='再开一包  ↗';status.textContent=`${cards.length} 张小小惊喜，全部收好`;
+        selected=Number.isInteger(saved.selected)&&saved.selected>=0&&saved.selected<cards.length?saved.selected:-1;
+        cardButtons.forEach((button,index)=>{button.classList.toggle('is-selected',index===selected);button.setAttribute('aria-pressed',String(index===selected));});
+      }
+    }
+    status.textContent=`${cards.length} 张小小惊喜，等你拆开`;
+    restore(window.openai?.widgetState);
+    window.addEventListener('openai:set_globals',event=>{if(event.detail?.globals?.widgetState)restore(event.detail.globals.widgetState);});
+  })();
+  </script>
+</div>

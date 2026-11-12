@@ -1,0 +1,4 @@
+interface:
+  display_name: "卡包抽卡动画"
+  short_description: "参考卡包拆封节奏，生成可交互、可换卡面的抽卡动画与预览"
+  default_prompt: "使用 $card-pack-opening 制作一个卡包抽卡动画，沿用参考视频的撕顶、彩虹飘带与五张卡同时飞出落定的节奏。"
